@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class Api::CardsController < ApplicationController
-    before_action :set_card, only: %i[show update destroy]
+  before_action :set_card, only: %i[show update destroy]
   def index
     render json: Card.all
   end
@@ -42,5 +44,4 @@ class Api::CardsController < ApplicationController
   def set_card
     @card = Item.find(params[:id])
   end
-end
 end
