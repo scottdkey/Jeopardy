@@ -1,13 +1,15 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Categories from './Components/categories'
+import Categories from './Components/categories';
+import CardForm from './Components/CardForm';
 
 function App() {
   return (
     <div className="App">
       <Categories />
       <div>working</div>
+      <CardForm />
     </div>
   );
 }
