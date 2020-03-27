@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class StaticController < ApplicationController
+class StaticController < Rails::ApplicationController
   layout false
   def index
     render file: Rails.root.join('public', 'index.html')
