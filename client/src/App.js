@@ -1,11 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Categories from './components/categories'
 
 function App() {
   return (
     <div className="App">
-      working
+      <Categories />
     </div>
   );
 }
