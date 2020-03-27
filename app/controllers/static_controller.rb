@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'rails/application_controller'
 
 require 'rails/application_controller'
 
