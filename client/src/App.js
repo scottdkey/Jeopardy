@@ -7,6 +7,7 @@ function App() {
   return (
     <div className="App">
       <Categories />
+      <div>working</div>
     </div>
   );
 }

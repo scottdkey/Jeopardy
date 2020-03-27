@@ -103,3 +103,187 @@ FOREIGN KEY ("card_id")
   [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1977116685803142030)[0m
   [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 15:59:50 -0600
+  [1m[35m (4.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::CategoriesController#index as HTML
+Completed 500  in 7ms (ActiveRecord: 0.0ms | Allocations: 1422)
+
+
+
+ArgumentError - wrong number of arguments (given 0, expected 1):
+  app/models/category.rb:4:in `<class:Category>'
+  app/models/category.rb:3:in `<main>'
+  app/controllers/api/categories_controller.rb:6:in `index'
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 16:00:16 -0600
+Processing by Api::CategoriesController#index as HTML
+Completed 500  in 3ms (ActiveRecord: 0.0ms | Allocations: 1056)
+
+
+
+ArgumentError - wrong number of arguments (given 0, expected 1):
+  app/models/category.rb:4:in `<class:Category>'
+  app/models/category.rb:3:in `<main>'
+  app/controllers/api/categories_controller.rb:6:in `index'
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 16:03:36 -0600
+Processing by Api::CategoriesController#index as HTML
+Completed 500  in 16ms (ActiveRecord: 0.0ms | Allocations: 3318)
+
+
+
+ArgumentError - wrong number of arguments (given 0, expected 1):
+  app/models/category.rb:4:in `<class:Category>'
+  app/models/category.rb:3:in `<main>'
+  app/controllers/api/categories_controller.rb:6:in `index'
+
+Started GET "/rails/info/routes" for ::1 at 2020-03-27 16:03:51 -0600
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/scottkey/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-6.0.2.2/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/scottkey/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/actionpack-6.0.2.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [36 times] (Duration: 30.0ms | Allocations: 4974)
+  Rendered /Users/scottkey/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/actionpack-6.0.2.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 134.1ms | Allocations: 1060)
+  Rendered /Users/scottkey/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-6.0.2.2/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 182.8ms | Allocations: 9446)
+Completed 200 OK in 276ms (Views: 224.1ms | ActiveRecord: 0.0ms | Allocations: 12976)
+
+
+Started GET "/favicon.ico" for ::1 at 2020-03-27 16:03:52 -0600
+Processing by StaticController#index as 
+  Parameters: {"other"=>"favicon"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from index at /Users/scottkey/coding/dpl/Week7/Jeopardy/app/controllers/static_controller.rb:9)
+Completed 500  in 34ms (ActiveRecord: 0.0ms | Allocations: 3481)
+
+
+
+ActionView::MissingTemplate - Missing template Users/scottkey/coding/dpl/Week7/Jeopardy/public/index.html with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/scottkey/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-6.0.2.2/lib/rails/templates"
+  * "/Users/scottkey/coding/dpl/Week7/Jeopardy"
+  * "/"
+:
+  app/controllers/static_controller.rb:9:in `index'
+
+Started GET "/api/categories" for ::1 at 2020-03-27 16:04:05 -0600
+Processing by Api::CategoriesController#index as HTML
+Completed 500  in 3ms (ActiveRecord: 0.0ms | Allocations: 987)
+
+
+
+ArgumentError - wrong number of arguments (given 0, expected 1):
+  app/models/category.rb:4:in `<class:Category>'
+  app/models/category.rb:3:in `<main>'
+  app/controllers/api/categories_controller.rb:6:in `index'
+
+Started POST "/__better_errors/9d0500893bc53c5d/variables" for ::1 at 2020-03-27 16:04:06 -0600
+Started GET "/favicon.ico" for ::1 at 2020-03-27 16:04:06 -0600
+Processing by StaticController#index as 
+  Parameters: {"other"=>"favicon"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from index at /Users/scottkey/coding/dpl/Week7/Jeopardy/app/controllers/static_controller.rb:9)
+Completed 500  in 3ms (ActiveRecord: 0.0ms | Allocations: 2152)
+
+
+
+ActionView::MissingTemplate - Missing template Users/scottkey/coding/dpl/Week7/Jeopardy/public/index.html with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/scottkey/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-6.0.2.2/lib/rails/templates"
+  * "/Users/scottkey/coding/dpl/Week7/Jeopardy"
+  * "/"
+:
+  app/controllers/static_controller.rb:9:in `index'
+
+Started GET "/api/categories" for ::1 at 2020-03-27 16:04:56 -0600
+Processing by Api::CategoriesController#index as HTML
+Completed 500  in 21ms (ActiveRecord: 0.0ms | Allocations: 3261)
+
+
+
+ArgumentError - wrong number of arguments (given 0, expected 1):
+  app/models/category.rb:4:in `<class:Category>'
+  app/models/category.rb:3:in `<main>'
+  app/controllers/api/categories_controller.rb:6:in `index'
+
+Started POST "/__better_errors/bf60b45b5455cc97/variables" for ::1 at 2020-03-27 16:04:56 -0600
+Started GET "/favicon.ico" for ::1 at 2020-03-27 16:04:56 -0600
+Processing by StaticController#index as 
+  Parameters: {"other"=>"favicon"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from index at /Users/scottkey/coding/dpl/Week7/Jeopardy/app/controllers/static_controller.rb:9)
+Completed 500  in 4ms (ActiveRecord: 0.0ms | Allocations: 2186)
+
+
+
+ActionView::MissingTemplate - Missing template Users/scottkey/coding/dpl/Week7/Jeopardy/public/index.html with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/scottkey/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-6.0.2.2/lib/rails/templates"
+  * "/Users/scottkey/coding/dpl/Week7/Jeopardy"
+  * "/"
+:
+  app/controllers/static_controller.rb:9:in `index'
+
+Started GET "/api/categories" for ::1 at 2020-03-27 16:04:57 -0600
+Processing by Api::CategoriesController#index as HTML
+Completed 500  in 2ms (ActiveRecord: 0.0ms | Allocations: 1021)
+
+
+
+ArgumentError - wrong number of arguments (given 0, expected 1):
+  app/models/category.rb:4:in `<class:Category>'
+  app/models/category.rb:3:in `<main>'
+  app/controllers/api/categories_controller.rb:6:in `index'
+
+Started POST "/__better_errors/557960464a29bd8e/variables" for ::1 at 2020-03-27 16:04:57 -0600
+Started GET "/favicon.ico" for ::1 at 2020-03-27 16:04:57 -0600
+Processing by StaticController#index as 
+  Parameters: {"other"=>"favicon"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from index at /Users/scottkey/coding/dpl/Week7/Jeopardy/app/controllers/static_controller.rb:9)
+Completed 500  in 5ms (ActiveRecord: 0.0ms | Allocations: 2186)
+
+
+
+ActionView::MissingTemplate - Missing template Users/scottkey/coding/dpl/Week7/Jeopardy/public/index.html with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/scottkey/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-6.0.2.2/lib/rails/templates"
+  * "/Users/scottkey/coding/dpl/Week7/Jeopardy"
+  * "/"
+:
+  app/controllers/static_controller.rb:9:in `index'
+
+Started GET "/api/categories" for ::1 at 2020-03-27 16:05:10 -0600
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (5.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 44ms (Views: 13.6ms | ActiveRecord: 9.8ms | Allocations: 4941)
+
+
+Started GET "/favicon.ico" for ::1 at 2020-03-27 16:05:10 -0600
+Processing by StaticController#index as 
+  Parameters: {"other"=>"favicon"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from index at /Users/scottkey/coding/dpl/Week7/Jeopardy/app/controllers/static_controller.rb:9)
+Completed 500  in 18ms (ActiveRecord: 0.0ms | Allocations: 3610)
+
+
+
+ActionView::MissingTemplate - Missing template Users/scottkey/coding/dpl/Week7/Jeopardy/public/index.html with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/scottkey/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-6.0.2.2/lib/rails/templates"
+  * "/Users/scottkey/coding/dpl/Week7/Jeopardy"
+  * "/"
+:
+  app/controllers/static_controller.rb:9:in `index'
+
+Started GET "/api/cards" for ::1 at 2020-03-27 16:05:18 -0600
+Processing by Api::CardsController#index as HTML
+  [1m[36mCard Load (6.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/cards_controller.rb:6:in `index'
+Completed 200 OK in 39ms (Views: 12.1ms | ActiveRecord: 9.5ms | Allocations: 4697)
+
+
+Started GET "/favicon.ico" for ::1 at 2020-03-27 16:05:18 -0600
+Processing by StaticController#index as 
+  Parameters: {"other"=>"favicon"}
+DEPRECATION WARNING: render file: should be given the absolute path to a file (called from index at /Users/scottkey/coding/dpl/Week7/Jeopardy/app/controllers/static_controller.rb:9)
+Completed 500  in 14ms (ActiveRecord: 0.0ms | Allocations: 2750)
+
+
+
+ActionView::MissingTemplate - Missing template Users/scottkey/coding/dpl/Week7/Jeopardy/public/index.html with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby]}. Searched in:
+  * "/Users/scottkey/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/railties-6.0.2.2/lib/rails/templates"
+  * "/Users/scottkey/coding/dpl/Week7/Jeopardy"
+  * "/"
+:
+  app/controllers/static_controller.rb:9:in `index'
+
