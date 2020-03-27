@@ -1,7 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Categories from './Components/categories'
+import Categories from './components/categories';
+
 
 function App() {
   return (
