@@ -83,3 +83,6 @@ production:
   database: Jeopardy_production
   username: Jeopardy
   password: <%= ENV['JEOPARDY_DATABASE_PASSWORD'] %>
+
+  default: &default
+  host: localhost

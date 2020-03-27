@@ -44,6 +44,7 @@ class Categories extends Component {
       <>
       <Card.Group itemsPerRow={5}>
         <Card>
+          this is the categories
         </Card>
       </Card.Group>
       </>
