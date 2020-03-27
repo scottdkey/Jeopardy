@@ -33,22 +33,44 @@ class Categories extends Component {
   }
 
 
-  updateCategory = () => {}
+  updateCategory = (id) => {
+    console.log(id)
+    axios.put(`/api/categories/${id}`).then(({ data }) => {
+      const categores = this.state.categories.map(( c ) => {
+        if (c.id === id) return data
+        return data
+      })
+      this.setState({categores})
+    })
+  }
   categoryComplete = () =>{}
   toggleEdit = () => {}
 
-  getCategories = () => {}
-
-  render() {
-    return (
+  showCategories = () => {
+      // this.state.categories 
+    return(
       <>
-      <Card.Group itemsPerRow={5}>
-        <Card>
-          this is the categories
-        </Card>
-      </Card.Group>
+
       </>
     )
+  }
+
+  render() {
+    const {categories} = this.state;
+    return (
+      <>
+        <Card.Group itemsPerRow={5}>
+          {categories.map(c => (
+            <Card
+              key={c.id}
+              
+            >
+              {c.name}
+            </Card>
+          ))}
+        </Card.Group>
+      </>
+    );
   }
 }
 
