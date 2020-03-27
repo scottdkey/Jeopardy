@@ -287,3 +287,20 @@ ActionView::MissingTemplate - Missing template Users/scottkey/coding/dpl/Week7/J
 :
   app/controllers/static_controller.rb:9:in `index'
 
+Started GET "/api/answers" for ::1 at 2020-03-27 16:06:10 -0600
+Processing by Api::AnswersController#index as HTML
+Completed 204 No Content in 2ms (ActiveRecord: 0.0ms | Allocations: 862)
+
+
+Started GET "/api/answers" for ::1 at 2020-03-27 16:06:15 -0600
+Processing by Api::AnswersController#index as HTML
+Completed 204 No Content in 2ms (ActiveRecord: 0.0ms | Allocations: 846)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 16:06:24 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (2.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 16ms (Views: 11.4ms | ActiveRecord: 2.4ms | Allocations: 2419)
+
+
