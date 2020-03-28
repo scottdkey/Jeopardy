@@ -21,7 +21,7 @@ class CategoryForm extends Component {
     
     e.preventDefault();
     const {id, name} = this.state
-    const {toggleForm, editForm} = this.props
+    const {toggleForm, editForm, reset} = this.props
     if (id === null) {
       axios
         .post("/api/categories", {
@@ -31,7 +31,6 @@ class CategoryForm extends Component {
           console.log(res);
           this.setState({ name: "", id: null });
           toggleForm();
-          // resetPage();
         });
     } else {
       const category = {...this.state}
@@ -41,19 +40,22 @@ class CategoryForm extends Component {
       .then(res => {
         console.log(res);
         editForm();
+        
       });
     }
+    reset();
   };
 
 
   render() {
-    const {name} = this.state
+    const {name, id} = this.state
     return (
       <>
         <Form onSubmit={this.handleSubmit}>
           <Form.Input
             value={name}
             name="name"
+            placeholder={id ? '' : 'enter a new category'}
             onChange={e => this.setState({ [e.target.name]: e.target.value })}
           />
         </Form>

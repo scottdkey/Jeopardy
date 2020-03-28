@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CategoryForm from "./CategoryForm";
 import { Button } from "semantic-ui-react";
+import axios from 'axios'
 
 class Category extends Component {
   state = {
@@ -12,11 +13,13 @@ class Category extends Component {
   };
   updateCategories = () => {
     //need some logic to update everything
-  }
+  };
 
   toggleComplete = () => {
     //when all of the questions are finished
   };
+
+  
 
   render() {
     const { editing, category } = this.state;
@@ -27,11 +30,15 @@ class Category extends Component {
           <CategoryForm
             category={category}
             editForm={this.editForm}
+            reset={this.props.reset}
           />
         ) : null}
 
         <Button color="purple" onClick={() => this.editForm()}>
           {editing ? "hide" : "edit"}
+        </Button>
+        <Button color="red" onClick={() => this.props.delete(category.id)}>
+          delete
         </Button>
       </>
     );
