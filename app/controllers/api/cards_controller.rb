@@ -7,10 +7,10 @@ class Api::CardsController < ApplicationController
   end
 
   def show
-    render json: @item
+    render json: @card
   end
 
-  # error 446 represents error in creating a card
+  # error 446 represents error in creating
   def create
     card = Card.new(card_params)
 
@@ -21,13 +21,13 @@ class Api::CardsController < ApplicationController
     end
   end
 
-  # error 447 represents error in updating a card
+  # error 447 represents error in updating
   def update
     card = @card.update(card_params)
     if card.save
       render json: card
     else
-      render json: item.errors, status: 447
+      render json: card.errors, status: 447
     end
   end
 
@@ -38,10 +38,10 @@ class Api::CardsController < ApplicationController
   private
 
   def card_params
-    params.require(:item).permit(:name, :complete)
+    params.require(:card).permit(:name, :complete)
   end
 
   def set_card
-    @card = Item.find(params[:id])
+    @card = Card.find(params[:id])
   end
 end

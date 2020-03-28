@@ -7,10 +7,10 @@ class Api::CategoriesController < ApplicationController
   end
 
   def show
-    render json: @item
+    render json: @category
   end
 
-  # error 444 represents error in creating a category
+  # error 444 represents error in creating
   def create
     category = Category.new(category_params)
 
@@ -21,7 +21,7 @@ class Api::CategoriesController < ApplicationController
     end
   end
 
-  # error 445 represents error in updating a category
+  # error 445 represents error in updating
   def update
     if @category.update(category_params)
       render json: @category
