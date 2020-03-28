@@ -1,5 +1,5 @@
 import React from 'react';
-import {Form, Header, Button} from 'semantic-ui-react';
+import {Form, Header, Button, Container} from 'semantic-ui-react';
 
 
 //need a form on this page that allows a user to create new cards
@@ -20,14 +20,25 @@ export default class CardForm extends React.Component{
 
   componentDidMount(){
     console.log('mounted')
+    //honestly not sure what may or may not need to be here
   }
 
-  handleChange(e){
-    console.log(e)
+  handleChange = (e) => {
+    // console.log(e)
+    const name = e.target.name
+    const value = e.target.value
+    this.setState({
+      [name]:value
+    })
   }
 
-  handleSubmit(e){
+  handleSubmit = (e) => {
     console.log('clicked')
+    //where should this submit to axios-wise? Not sure how we'll make adding new ones work
+  }
+
+  toggleForm = () => {
+    //needs to be built out and needs a button somewhere
   }
 
 
@@ -36,11 +47,13 @@ export default class CardForm extends React.Component{
     const {category, name, points, answers} = this.state
     return(
       <>
+      <Container>
         <Header>Create a New Card</Header>
-        <Form.Group>
           <Form onSubmit={this.handleSubmit}>
+          <Form.Group >
             <Form.Select
-              six wide
+              // option value={Categories} something like this right here to render pre-made categories?
+              width={6}
               label='Choose Category'
               name='category'
               placeholder=''
@@ -48,52 +61,63 @@ export default class CardForm extends React.Component{
               onChange={this.handleChange}
             />
             <Form.Select 
+            width={6}
               label='Point Value'
               name='points'
               placeholder='Select Point Value'
               value={points}
               onChange={this.handleChange}
             />
-            <Form.Input 
+            <Form.Input
+              width={6} 
               label='Card Question'
               name='name'
               placeholder='Card Question'
               value={name}
               onChange={this.handleChange}
             />
+          </Form.Group>
             <p>Please Enter 4 Answers</p>
             <p>Choose One Answer as the Correct Response</p>
-            <Form.Input 
+            <Form.Input
+              width={12} 
               label='Answers'
               name='name'
               placeholder='Answer'
               value={answers}
               onChange={this.handleChange}
             />
+            {/* needs some kind of radio button here  */}
             <Form.Input 
+              width={12} 
               label='Answers'
               name='name'
               placeholder='Answer'
               value={answers}
               onChange={this.handleChange}
             />
-            <Form.Input 
+            {/* needs some kind of radio button here  */}
+            <Form.Input
+              width={12} 
               label='Answers'
               name='name'
               placeholder='Answer'
               value={answers}
               onChange={this.handleChange}
             />
+            {/* needs some kind of radio button here  */}
             <Form.Input 
+              width={12} 
               label='Answers'
               name='name'
               placeholder='Answer'
               value={answers}
               onChange={this.handleChange}
             />
+            {/* needs some kind of radio button here  */}
             <Button color='blue'>Submit</Button>
           </Form>
-        </Form.Group>
+        </Container>
       </>
     )
   }

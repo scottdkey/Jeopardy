@@ -368,3 +368,19 @@ FOREIGN KEY ("card_id")
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1977116685803142030)[0m
   [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 >>>>>>> f7cf3579e467f6ac1309a84de88149683590a07c
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Create (2.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "complete", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "first"], ["complete", false], ["created_at", "2020-03-28 02:52:17.494002"], ["updated_at", "2020-03-28 02:52:17.494002"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "complete", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Second"], ["complete", false], ["created_at", "2020-03-28 02:52:17.505294"], ["updated_at", "2020-03-28 02:52:17.505294"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "complete", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Third"], ["complete", true], ["created_at", "2020-03-28 02:52:17.514264"], ["updated_at", "2020-03-28 02:52:17.514264"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Create (0.6ms)[0m  [1m[32mINSERT INTO "categories" ("name", "complete", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Fourth"], ["complete", false], ["created_at", "2020-03-28 02:52:17.525157"], ["updated_at", "2020-03-28 02:52:17.525157"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "complete", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "5th"], ["complete", true], ["created_at", "2020-03-28 02:52:17.536751"], ["updated_at", "2020-03-28 02:52:17.536751"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
