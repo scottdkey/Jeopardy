@@ -1,5 +1,7 @@
 import React from 'react';
-import card from '/components/card';
+import card from './card';
+import axios from 'axios'
+import { Card, Button } from 'semantic-ui-react'
 
 
 
@@ -12,7 +14,9 @@ export default class Cards extends React.Component {
     console.log("mounted")
     axios.get('api/cards')
       .then(res =>{
-        this.setState({res.data})
+        this.setState({
+          // res.data
+        })
       }).catch(err =>{
         console.log(err)
       })
@@ -33,9 +37,9 @@ export default class Cards extends React.Component {
   render(){
     return(
       <Card.Group itemsPerRow={5}>
-        { Cards.map( {category, card} => 
-        <Card />
-        )}
+        {/* { Cards.map( {category, card} =>  */}
+        <card />
+        {/* )} */}
       </Card.Group>
     )
   }
