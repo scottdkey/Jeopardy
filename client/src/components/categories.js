@@ -1,10 +1,12 @@
 import React, { Component } from "react";
-import { Card, Button } from "semantic-ui-react";
+import { Card, Button} from "semantic-ui-react";
 import axios from "axios";
-import Cards from './cards'
+import Category from "./category";
+import CategoryForm from "./CategoryForm";
+// import Cards from './cards'
 
 class Categories extends Component {
-  state = { categories: [], load: true };
+  state = { categories: [], load: true, toggleForm: false};
 
   componentDidMount() {
     axios
@@ -41,29 +43,32 @@ class Categories extends Component {
       this.setState({ categores });
     });
   };
-  categoryComplete = () => {};
-  toggleEdit = () => {
-    console.log('edit clicked')
+  toggleForm = () => {
+    this.setState({
+      toggleForm: !this.state.toggleForm
+    })
   };
 
-  showCategories = () => {
-    // this.state.categories
-    return <></>;
-  };
 
   render() {
-    const { categories, cards } = this.state;
+    const { categories, toggleForm } = this.state;
     return (
       <>
-        {categories.map(c => (
-          <Card.Group itemsPerRow={1} key={c.id}>
-            {c.name}
-              <Cards />
-              <Button color="purple inverted"onClick={this.toggleEdit()}
-
-              />
+        <div id='categories'>
+          <Card.Group itemsPerRow={5}>
+            {categories.map(c => (
+              <Card key={c.id}>
+                <Category category={c} />
+              </Card>
+            ))}
           </Card.Group>
-        ))}
+        </div>
+        <div id="new">
+          {toggleForm ? <CategoryForm toggleForm={this.toggleForm}/> : null}
+          <Button onClick={() => this.toggleForm()}>
+            {toggleForm ? "hide" : "new category"}
+          </Button>
+        </div>
       </>
     );
   }

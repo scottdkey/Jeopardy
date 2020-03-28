@@ -17,17 +17,16 @@ class Api::CategoriesController < ApplicationController
     if category.save
       render json: category
     else
-      render json: item.errors, status: 444
+      render json: category.errors, status: 444
     end
   end
 
   # error 445 represents error in updating a category
   def update
-    category = @category.update(category_params)
-    if category.save
-      render json: category
+    if @category.update(category_params)
+      render json: @category
     else
-      render json: item.errors, status: 445
+      render json: category.errors, status: 445
     end
   end
 
@@ -38,10 +37,10 @@ class Api::CategoriesController < ApplicationController
   private
 
   def category_params
-    params.require(:item).permit(:name, :complete)
+    params.require(:category).permit(:name, :complete)
   end
 
   def set_category
-    @category = Item.find(params[:id])
+    @category = Category.find(params[:id])
   end
 end

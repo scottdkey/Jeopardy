@@ -9,18 +9,19 @@ class CategoryForm extends Component {
   };
 
   componentDidMount(){
-    const { id, name } = this.props.category
-    this.setState({
-      id: id,
-      name: name
-    })
+    if(this.props.category == null){
+      this.setState({id: null, name: ''});
+    } else {
+      const { id, name } = this.props.category;
+      this.setState({ id, name})
+    }
   }
 
   handleSubmit = (e) => {
     
     e.preventDefault();
     const {id, name} = this.state
-    const {toggleForm, resetPage} = this.props
+    const {toggleForm, editForm} = this.props
     if (id === null) {
       axios
         .post("/api/categories", {
@@ -35,9 +36,11 @@ class CategoryForm extends Component {
     } else {
       const category = {...this.state}
       console.log(category)
-      axios.patch(`/api/categories/${id}`, category).then(res => {
+      axios
+      .patch(`/api/categories/${id}`, category)
+      .then(res => {
         console.log(res);
-        toggleForm();
+        editForm();
       });
     }
   };

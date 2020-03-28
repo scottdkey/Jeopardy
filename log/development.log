@@ -384,3 +384,569 @@ FOREIGN KEY ("card_id")
   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
   [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("name", "complete", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "5th"], ["complete", true], ["created_at", "2020-03-28 02:52:17.536751"], ["updated_at", "2020-03-28 02:52:17.536751"]]
   [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started PATCH "/api/categories/5" for 127.0.0.1 at 2020-03-27 22:28:25 -0600
+Started PATCH "/api/categories/5" for 127.0.0.1 at 2020-03-27 22:28:25 -0600
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::CategoriesController#update as HTML
+  Parameters: {"id"=>"5", "name"=>"Fourth", "category"=>{"id"=>"5", "name"=>"Fourth"}}
+Processing by Api::CategoriesController#update as HTML
+  Parameters: {"id"=>"5", "name"=>"Fourth", "category"=>{"id"=>"5", "name"=>"Fourth"}}
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/categories_controller.rb:45:in `set_category'
+[31mUnpermitted parameter: :id[0m
+Completed 500  in 41ms (ActiveRecord: 5.8ms | Allocations: 10303)
+
+
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/categories_controller.rb:45:in `set_category'
+[31mUnpermitted parameter: :id[0m
+Completed 500  in 34ms (ActiveRecord: 18.4ms | Allocations: 16143)
+
+
+
+NoMethodError - undefined method `save' for true:TrueClass:
+  app/controllers/api/categories_controller.rb:27:in `update'
+
+
+NoMethodError - undefined method `save' for true:TrueClass:
+  app/controllers/api/categories_controller.rb:27:in `update'
+
+Started PATCH "/api/categories/4" for 127.0.0.1 at 2020-03-27 22:28:37 -0600
+Processing by Api::CategoriesController#update as HTML
+  Parameters: {"id"=>"4", "name"=>"Third", "category"=>{"id"=>"4", "name"=>"Third"}}
+  [1m[36mCategory Load (3.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/categories_controller.rb:45:in `set_category'
+[31mUnpermitted parameter: :id[0m
+Completed 500  in 14ms (ActiveRecord: 3.0ms | Allocations: 4027)
+
+
+
+NoMethodError - undefined method `save' for true:TrueClass:
+  app/controllers/api/categories_controller.rb:27:in `update'
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:30:54 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 33ms (Views: 16.6ms | ActiveRecord: 10.6ms | Allocations: 7651)
+
+
+Started PATCH "/api/categories/2" for 127.0.0.1 at 2020-03-27 22:30:56 -0600
+Processing by Api::CategoriesController#update as HTML
+  Parameters: {"id"=>"2", "name"=>"first", "category"=>{"id"=>"2", "name"=>"first"}}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/categories_controller.rb:44:in `set_category'
+[31mUnpermitted parameter: :id[0m
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 3350)
+
+
+Started PATCH "/api/categories/3" for 127.0.0.1 at 2020-03-27 22:31:01 -0600
+Processing by Api::CategoriesController#update as HTML
+  Parameters: {"id"=>"3", "name"=>"Second", "category"=>{"id"=>"3", "name"=>"Second"}}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/categories_controller.rb:44:in `set_category'
+[31mUnpermitted parameter: :id[0m
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 3147)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:31:44 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.7ms | Allocations: 3044)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:32:03 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 1.6ms | Allocations: 3049)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:32:07 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.5ms | Allocations: 3044)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:32:20 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.4ms | Allocations: 3044)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:33:02 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.8ms | Allocations: 3044)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:34:10 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.5ms | Allocations: 3044)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:34:21 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.5ms | Allocations: 3044)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:34:27 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.7ms | Allocations: 3044)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:34:44 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.7ms | Allocations: 3045)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:34:49 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.5ms | Allocations: 3044)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:35:03 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.5ms | Allocations: 3045)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:35:08 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 0.9ms | Allocations: 3044)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:35:13 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.5ms | Allocations: 3044)
+
+
+Started PATCH "/api/categories/6" for 127.0.0.1 at 2020-03-27 22:35:18 -0600
+Processing by Api::CategoriesController#update as HTML
+  Parameters: {"id"=>"6", "name"=>"5th", "category"=>{"id"=>"6", "name"=>"5th"}}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/categories_controller.rb:44:in `set_category'
+[31mUnpermitted parameter: :id[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 3147)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:35:27 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 10ms (Views: 6.5ms | ActiveRecord: 0.9ms | Allocations: 3044)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:35:57 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (4.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 14ms (Views: 8.0ms | ActiveRecord: 4.2ms | Allocations: 3044)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:36:05 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.5ms | Allocations: 3044)
+
+
+Started PATCH "/api/categories/6" for 127.0.0.1 at 2020-03-27 22:36:13 -0600
+Processing by Api::CategoriesController#update as HTML
+  Parameters: {"id"=>"6", "name"=>"5th", "category"=>{"id"=>"6", "name"=>"5th"}}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/categories_controller.rb:44:in `set_category'
+[31mUnpermitted parameter: :id[0m
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 3148)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:36:38 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.5ms | Allocations: 3044)
+
+
+Started PATCH "/api/categories/6" for 127.0.0.1 at 2020-03-27 22:36:40 -0600
+Processing by Api::CategoriesController#update as HTML
+  Parameters: {"id"=>"6", "name"=>"5th", "category"=>{"id"=>"6", "name"=>"5th"}}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/categories_controller.rb:44:in `set_category'
+[31mUnpermitted parameter: :id[0m
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 3147)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:37:59 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.6ms | Allocations: 3045)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:38:06 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.4ms | Allocations: 3045)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:44:49 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 1.1ms | Allocations: 3139)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:46:51 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.4ms | Allocations: 3044)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:47:06 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.7ms | Allocations: 3044)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:48:10 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (1.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 1.5ms | Allocations: 3044)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:48:30 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.5ms | Allocations: 3044)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:48:46 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.6ms | Allocations: 3044)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:49:10 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.6ms | Allocations: 3044)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:49:17 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.8ms | Allocations: 3044)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:49:59 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.7ms | Allocations: 3045)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:50:08 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.9ms | Allocations: 3045)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:50:19 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (2.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 6.9ms | ActiveRecord: 2.7ms | Allocations: 3045)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:50:21 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.4ms | Allocations: 3044)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:50:31 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 1.4ms | Allocations: 3044)
+
+
+Started POST "/api/categories" for 127.0.0.1 at 2020-03-27 22:50:38 -0600
+Processing by Api::CategoriesController#create as HTML
+  Parameters: {"name"=>"Testing", "category"=>{"name"=>"Testing"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/categories_controller.rb:17:in `create'
+  [1m[36mCategory Create (1.2ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Testing"], ["created_at", "2020-03-28 04:50:38.881809"], ["updated_at", "2020-03-28 04:50:38.881809"]]
+  ↳ app/controllers/api/categories_controller.rb:17:in `create'
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/categories_controller.rb:17:in `create'
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 2.6ms | Allocations: 6038)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:50:59 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.6ms | Allocations: 3127)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:52:50 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.4ms | Allocations: 3145)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:54:03 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.5ms | Allocations: 3145)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:54:24 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 6.2ms | ActiveRecord: 0.9ms | Allocations: 3145)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:54:53 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.5ms | Allocations: 3145)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:54:59 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.5ms | Allocations: 3146)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:55:11 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (4.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 14ms (Views: 6.5ms | ActiveRecord: 4.9ms | Allocations: 3146)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:55:37 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.7ms | Allocations: 3145)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:55:47 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (1.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 10ms (Views: 7.0ms | ActiveRecord: 1.7ms | Allocations: 3145)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:56:08 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.5ms | Allocations: 3145)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:56:59 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.5ms | Allocations: 3145)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:57:13 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.4ms | Allocations: 3145)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:57:25 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.8ms | Allocations: 3145)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:57:52 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.4ms | Allocations: 3145)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:58:02 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.4ms | Allocations: 3145)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:58:26 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.7ms | Allocations: 3146)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:59:42 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.6ms | Allocations: 3146)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 22:59:56 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.5ms | Allocations: 3146)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 23:00:20 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.7ms | Allocations: 3145)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 23:01:14 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (2.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 14ms (Views: 7.2ms | ActiveRecord: 2.0ms | Allocations: 3145)
+
+
+Started POST "/api/categories" for 127.0.0.1 at 2020-03-27 23:02:32 -0600
+Processing by Api::CategoriesController#create as HTML
+  Parameters: {"name"=>"", "category"=>{"name"=>""}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/categories_controller.rb:17:in `create'
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-03-28 05:02:32.142934"], ["updated_at", "2020-03-28 05:02:32.142934"]]
+  ↳ app/controllers/api/categories_controller.rb:17:in `create'
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/categories_controller.rb:17:in `create'
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 6.3ms | Allocations: 5954)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 23:03:26 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 1.2ms | Allocations: 3228)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 23:03:47 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.6ms | Allocations: 3246)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 23:03:52 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.6ms | Allocations: 3247)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 23:03:56 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (3.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 6.0ms | ActiveRecord: 3.1ms | Allocations: 3246)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 23:04:09 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.5ms | Allocations: 3247)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 23:04:19 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.7ms | Allocations: 3247)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 23:04:35 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.7ms | Allocations: 3247)
+
+
+Started PATCH "/api/categories/8" for 127.0.0.1 at 2020-03-27 23:04:38 -0600
+Processing by Api::CategoriesController#update as HTML
+  Parameters: {"id"=>"8", "name"=>"asdfas", "category"=>{"id"=>"8", "name"=>"asdfas"}}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/api/categories_controller.rb:44:in `set_category'
+[31mUnpermitted parameter: :id[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/categories_controller.rb:26:in `update'
+  [1m[36mCategory Update (6.8ms)[0m  [1m[33mUPDATE "categories" SET "name" = $1, "updated_at" = $2 WHERE "categories"."id" = $3[0m  [["name", "asdfas"], ["updated_at", "2020-03-28 05:04:39.000463"], ["id", 8]]
+  ↳ app/controllers/api/categories_controller.rb:26:in `update'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/categories_controller.rb:26:in `update'
+Completed 200 OK in 34ms (Views: 0.3ms | ActiveRecord: 8.3ms | Allocations: 8104)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 23:04:40 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 0.4ms | Allocations: 3246)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 23:05:28 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 1.3ms | Allocations: 3246)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-27 23:05:39 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 10ms (Views: 5.3ms | ActiveRecord: 0.4ms | Allocations: 3246)
+
+
