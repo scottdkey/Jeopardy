@@ -1,18 +1,17 @@
 import React, { Component } from "react";
 import CategoryForm from "./CategoryForm";
 import { Button } from "semantic-ui-react";
-import axios from 'axios'
 
 class Category extends Component {
   state = {
     editing: false,
     category: this.props.category
   };
-  editForm = () => {
+
+
+  //toggle CategoryForm for editing purposes
+  toggleEditForm = () => {
     this.setState({ editing: !this.state.editing });
-  };
-  updateCategories = () => {
-    //need some logic to update everything
   };
 
   toggleComplete = () => {
@@ -34,7 +33,7 @@ class Category extends Component {
           />
         ) : null}
 
-        <Button color="purple" onClick={() => this.editForm()}>
+        <Button color="purple" onClick={() => this.toggleEditForm()}>
           {editing ? "hide" : "edit"}
         </Button>
         <Button color="red" onClick={() => this.props.delete(category.id)}>

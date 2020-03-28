@@ -8,6 +8,8 @@ class CategoryForm extends Component {
     name: ""
   };
 
+
+  //setting the state of the form - if ID is present it will fill out info for edit
   componentDidMount(){
     if(this.props.category == null){
       this.setState({id: null, name: ''});
@@ -17,8 +19,9 @@ class CategoryForm extends Component {
     }
   }
 
+  //handleSubmit for this form will determine if there is a id present or not
+  //if present it will update, if not it will create a new category
   handleSubmit = (e) => {
-    
     e.preventDefault();
     const {id, name} = this.state
     const {toggleForm, editForm, reset} = this.props
@@ -34,7 +37,6 @@ class CategoryForm extends Component {
         });
     } else {
       const category = {...this.state}
-      console.log(category)
       axios
       .patch(`/api/categories/${id}`, category)
       .then(res => {

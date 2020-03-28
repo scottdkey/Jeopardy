@@ -12,6 +12,8 @@ class Categories extends Component {
     this.pullData();
   }
 
+  //sepreate pull data function to be able to reset the state of the page
+  //reusing it in the component did mount
   pullData = () => {
     axios
       .get("api/categories")
@@ -35,6 +37,7 @@ class Categories extends Component {
     });
   };
 
+  //axios call to update
   updateCategory = id => {
     console.log(id);
     axios.put(`/api/categories/${id}`).then(({ data }) => {
@@ -45,6 +48,8 @@ class Categories extends Component {
       this.setState({ categores });
     });
   };
+
+  //form toggle for the create new category
   toggleForm = () => {
     this.setState({
       toggleForm: !this.state.toggleForm
