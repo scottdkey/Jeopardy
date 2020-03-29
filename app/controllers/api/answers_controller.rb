@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-class Api::CardsController < ApplicationController
+class Api::AnswersController < ApplicationController
   before_action :set_answer, only: %i[show update destroy]
 
   def index
-    render json: Card.all
+    render json: Answer.all
   end
 
   def show
