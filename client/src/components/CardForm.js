@@ -1,5 +1,5 @@
 import React from 'react';
-import {Form, Header, Button, Container} from 'semantic-ui-react';
+import {Form, Header, Button, Container, Radio} from 'semantic-ui-react';
 import axios from 'axios';
 import Categories from './categories';
 
@@ -37,6 +37,8 @@ export default class CardForm extends React.Component{
 
   handleChange = (e, {name, value}) => {this.setState({[name]:value})}
 
+  handleCorrectAnswer = (e, { value }) => this.setState({ value })
+
   handleSubmit = (e) => {
     e.preventDefault()
     axios.post('api/cards')
@@ -64,7 +66,7 @@ export default class CardForm extends React.Component{
 
   
   render(){
-    const {category, question, points, answerA, answerB, answerC, answerD, correct} = this.state
+    const {category, question, points, answerA, answerB, answerC, answerD, value, correct} = this.state
     return(
       <>
       <Container>
@@ -100,42 +102,74 @@ export default class CardForm extends React.Component{
           </Form.Group>
             <p>Please Enter 4 Answers</p>
             <p>Choose One Answer as the Correct Response</p>
-            <Form.Input
-              width={12} 
-              label='Answer A'
-              name='answerA'
-              placeholder='AnswerA'
-              value={answerA}
-              onChange={this.handleChange}
-            />
-            {/* needs some kind of radio button here  */}
-            <Form.Input 
-              width={12} 
-              label='AnswersB'
-              name='answerB'
-              placeholder='AnswerB'
-              value={answerB}
-              onChange={this.handleChange}
-            />
-            {/* needs some kind of radio button here  */}
-            <Form.Input
-              width={12} 
-              label='Answers C'
-              name='answerC'
-              placeholder='Answer'
-              value={answerC}
-              onChange={this.handleChange}
-            />
-            {/* needs some kind of radio button here  */}
-            <Form.Input 
-              width={12} 
-              label='Answers D'
-              name='answerD'
-              placeholder='Answer'
-              value={answerD}
-              onChange={this.handleChange}
-            />
-            {/* needs some kind of radio button here  */}
+            <Form.Group inline>
+              <Form.Input
+                width={12} 
+                label='Answer A'
+                name='answerA'
+                placeholder='Answer A'
+                value={answerA}
+                onChange={this.handleChange}
+              />
+                <Form.Field
+                  control={Radio}
+                  label='Correct'
+                  value='1'
+                  checked={value === '1'}
+                  onChange={this.handleCorrectAnswer}
+                />
+            </Form.Group>
+            <Form.Group inline>
+              <Form.Input 
+                width={12} 
+                label='Answer B'
+                name='answerB'
+                placeholder='Answer B'
+                value={answerB}
+                onChange={this.handleChange}
+              />
+              <Form.Field
+                  control={Radio}
+                  label='Correct'
+                  value='2'
+                  checked={value === '2'}
+                  onChange={this.handleCorrectAnswer}
+                />
+            </Form.Group>
+            <Form.Group inline>
+              <Form.Input
+                width={12} 
+                label='Answer C'
+                name='answerC'
+                placeholder='Answer C'
+                value={answerC}
+                onChange={this.handleChange}
+              />
+              <Form.Field
+                control={Radio}
+                label='Correct'
+                value='3'
+                checked={value === '3'}
+                onChange={this.handleCorrectAnswer}
+              />
+            </Form.Group>
+            <Form.Group inline>
+              <Form.Input 
+                width={12} 
+                label='Answer D'
+                name='answerD'
+                placeholder='Answer D'
+                value={answerD}
+                onChange={this.handleChange}
+              />
+              <Form.Field
+                control={Radio}
+                label='Correct'
+                value='4'
+                checked={value === '4'}
+                onChange={this.handleCorrectAnswer}
+              />
+            </Form.Group>
             <Button color='blue'>Submit</Button>
           </Form>
         </Container>
