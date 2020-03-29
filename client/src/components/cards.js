@@ -1,21 +1,23 @@
 import React from 'react';
 import axios from 'axios'
 import { Card, Button } from 'semantic-ui-react'
-import Card from './Components/card'
-
+import Questions from './Questions'
 
 
 export default class Cards extends React.Component {
  //cards need state?
-  state = {}
+  state = { 
+    toggleForm:false,
 
-  //this should pull all our cards from the database, currently has some syntax error I can't figure out
+  }
+
+  //this should pull all our cards from the database
   componentDidMount() {
     console.log("mounted")
     axios.get('api/cards')
       .then(res =>{
         this.setState({
-          // res.data
+          cards = res.data
         })
       }).catch(err =>{
         console.log(err)
@@ -23,8 +25,17 @@ export default class Cards extends React.Component {
   }
 
   //need to make an add card form elsewhere and render it here?
-  addCard(){
-
+  addCard = () => {
+    axios.post('api/cards', )
+    .then(res => {
+      console.log(res)
+      this.setState({
+        
+      })
+    })
+    .catch(err => {
+      console.log(err)
+    })
   }
   //attach a delete card button to each card, decide when to display it?
   deleteCard(){

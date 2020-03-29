@@ -41,11 +41,11 @@ class Categories extends Component {
   updateCategory = id => {
     console.log(id);
     axios.put(`/api/categories/${id}`).then(({ data }) => {
-      const categores = this.state.categories.map(c => {
+      const categories = this.state.categories.map(c => {
         if (c.id === id) return data;
         return data;
       });
-      this.setState({ categores });
+      this.setState({ categories });
     });
   };
 

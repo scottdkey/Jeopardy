@@ -1,7 +1,7 @@
 import React from 'react';
 import {Form, Header, Button, Container} from 'semantic-ui-react';
 import axios from 'axios';
-// import Categories from './categories';
+import Categories from './categories';
 
 
 //need a form on this page that allows a user to create new cards
@@ -17,24 +17,11 @@ export default class CardForm extends React.Component{
     name:'',
     points:'',
     answers:'',
-    toggleForm:false,
   }
 
   componentDidMount(){
     console.log('mounted')
-    axios
-      .get("api/categories")
-      .then(res => {
-        const categorySelect = Array
-        .from(new Set(res.data
-          .map(i => i.category)))
-          .map(
-          (d, i) => {
-            return { value: d, key: i+1, text: d };
-          }
-        )
-      }
-    )
+    // this.pullData()
   }
 
   handleChange = (e) => {

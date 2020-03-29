@@ -23,7 +23,6 @@ export default class Questions extends React.Component {
   return filtered
  }
 
-  //this should pull all our cards from the database, currently has some syntax error I can't figure out
   componentDidMount() {
     
     const catID = this.props.category.id
