@@ -1,34 +1,47 @@
 import React, { Component } from 'react'
-import {Card} from 'semantic-ui-react'
-import Axios from 'axios';
+import {Card, Button} from 'semantic-ui-react'
+import axios from 'axios';
 
 class Question extends Component {
   state = {
     question: this.props.q,
-    answers: this.props.a
+    answers: [],
+    correct: false,
+    incorrect: false
   };
 
   componentDidMount(){
     const qID = this.state.question.id
-    Axios.get('/api/answers').then(res =>{
-      const answers = res.data.filter(a => {
-        if (qID === a.id){
-          console.log(a)
-          return a
+    axios.get('/api/answers')
+    .then(res =>{
+      const answers = res.data.find(answers => {
+        if(answers.card_id === qID){
+          return answers
         }
-
-        })
-     
-    }).catch(err =>{})
+      })
+      this.setState({
+        answers
+      })
+    }).catch(err =>{console.log(err)})
   }
-  currentQuestionsAnswers = () => {};
-  answers = {};
+  handleClick(){
+    
+  }
 
   render() {
-    const { question } = this.state;
+    const { question, answers } = this.state;
     return (
       <>
-        <Card.Header>{question.name}</Card.Header>
+        <Card.Content>
+          <Card.Header>{question.name}</Card.Header>
+        </Card.Content>
+        <Card.Description>
+            <Button color="orange">{answers.a}</Button>
+            <Button color="green">{answers.b}</Button>
+            <Button color="pink">{answers.c}</Button>
+            <Button color="blue">{answers.d}</Button>
+            {/* <Button>{answers.correct}</Button> */}
+        </Card.Description>
       </>
     );
   }

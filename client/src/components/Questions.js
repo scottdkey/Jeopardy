@@ -53,12 +53,12 @@ export default class Questions extends React.Component {
 
 
   render(){
-    const {questions, category} = this.state
+    const {questions}= this.state
     return(
       <>
         {questions.map( question => (
           <Card key={question.id}>
-            <Question q={question} c={category}/>
+            <Question q={question}/>
           </Card>
         ))}
       </>
