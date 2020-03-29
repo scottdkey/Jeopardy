@@ -18982,3 +18982,56 @@ Processing by Api::AnswersController#index as HTML
 Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.5ms | Allocations: 4026)
 
 
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (58.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Jeopardy_development"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Jeopardy_development"[0m
+Started GET "/api/cards" for 127.0.0.1 at 2020-03-29 15:22:33 -0600
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-29 15:22:33 -0600
+
+PG::ConnectionBad - FATAL:  database "Jeopardy_development" does not exist
+:
+
+
+PG::ConnectionBad - FATAL:  database "Jeopardy_development" does not exist
+:
+
+Started POST "/api/categories" for 127.0.0.1 at 2020-03-29 15:23:18 -0600
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-29 15:23:18 -0600
+
+PG::ConnectionBad - FATAL:  database "Jeopardy_development" does not exist
+:
+
+
+PG::ConnectionBad - FATAL:  database "Jeopardy_development" does not exist
+:
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-29 16:14:11 -0600
+Started GET "/api/cards" for 127.0.0.1 at 2020-03-29 16:14:11 -0600
+
+PG::ConnectionBad - FATAL:  database "Jeopardy_development" does not exist
+:
+
+
+PG::ConnectionBad - FATAL:  database "Jeopardy_development" does not exist
+:
+
+Started POST "/api/cards" for 127.0.0.1 at 2020-03-29 16:14:25 -0600
+
+PG::ConnectionBad - FATAL:  database "Jeopardy_development" does not exist
+:
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-29 16:14:35 -0600
+
+PG::ConnectionBad - FATAL:  database "Jeopardy_development" does not exist
+:
+
+Started GET "/api/cards" for 127.0.0.1 at 2020-03-29 16:14:35 -0600
+
+PG::ConnectionBad - FATAL:  database "Jeopardy_development" does not exist
+:
+
