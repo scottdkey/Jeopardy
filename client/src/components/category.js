@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CategoryForm from "./CategoryForm";
 import { Button } from "semantic-ui-react";
+import Questions from './Questions'
 
 class Category extends Component {
   state = {
@@ -39,6 +40,7 @@ class Category extends Component {
         <Button color="red" onClick={() => this.props.delete(category.id)}>
           delete
         </Button>
+        <Questions category={this.props.category} />
       </>
     );
   }

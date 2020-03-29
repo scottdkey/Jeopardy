@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 2020_03_26_232007) do
 
   create_table "cards", force: :cascade do |t|
     t.string "name"
-    t.text "answers"
     t.boolean "complete"
     t.integer "points"
     t.bigint "category_id", null: false
