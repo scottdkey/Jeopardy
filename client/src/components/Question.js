@@ -7,7 +7,8 @@ class Question extends Component {
     question: this.props.q,
     answers: [],
     correct: false,
-    incorrect: false
+    incorrect: false,
+    showQuestion: false
   };
 
   componentDidMount(){
@@ -24,14 +25,14 @@ class Question extends Component {
       })
     }).catch(err =>{console.log(err)})
   }
-  handleClick(){
-    
+  
+  toggleQuestion(){
+    this.setState({ showQuestion: !this.state.showQuestion})
   }
-
-  render() {
+  questionContainer(){
     const { question, answers } = this.state;
     return (
-      <>
+    <>
         <Card.Content>
           <Card.Header>{question.name}</Card.Header>
         </Card.Content>
@@ -42,6 +43,20 @@ class Question extends Component {
             <Button color="blue">{answers.d}</Button>
             {/* <Button>{answers.correct}</Button> */}
         </Card.Description>
+      </>)
+  }
+  
+
+  render() {
+    const { showQuestion, question } = this.state;
+    return (
+      <>
+        {showQuestion ? null : (
+          <Button onClick={() => this.toggleQuestion()}>
+            {question.points}
+          </Button>
+        )}
+        {showQuestion ? this.questionContainer() : null}
       </>
     );
   }
