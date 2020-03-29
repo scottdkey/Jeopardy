@@ -12,7 +12,7 @@ export default class CardForm extends React.Component{
 
   state={
     category:'',
-    name:'',
+    question:'',
     points:'',
     answerA:'',
     answerB:'', 
@@ -41,7 +41,7 @@ export default class CardForm extends React.Component{
 
 
   render(){
-    const {category, name, points, answerA, answerB, answerC, answerD, correct} = this.state
+    const {category, question, points, answerA, answerB, answerC, answerD, correct} = this.state
     return(
       <>
       <Container>
@@ -70,7 +70,7 @@ export default class CardForm extends React.Component{
               label='Card Question'
               name='question'
               placeholder='Card Question'
-              value={name}
+              value={question}
               onChange={this.handleChange}
             />
           </Form.Group>
