@@ -42,11 +42,11 @@ export default class Questions extends React.Component {
   }
 
   //need to make an add card form elsewhere and render it here?
-  addCard(){
+  addQuestion(){
 
   }
   //attach a delete card button to each card, decide when to display it?
-  deleteCard(){
+  deleteQuestion(){
 
   }
 
