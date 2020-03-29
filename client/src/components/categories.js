@@ -3,6 +3,7 @@ import { Card, Button } from "semantic-ui-react";
 import axios from "axios";
 import Category from "./category";
 import CategoryForm from "./CategoryForm";
+import Questions from "./Questions";
 // import Cards from './cards'
 
 class Categories extends Component {
@@ -15,18 +16,19 @@ class Categories extends Component {
   //sepreate pull data function to be able to reset the state of the page
   //reusing it in the component did mount
   pullData = () => {
-    axios
-      .get("api/categories")
-      .then(res => {
-        this.setState({
-          categories: res.data,
-          load: false
+      axios
+        .get("api/categories")
+        .then(res => {
+          this.setState({
+            categories: res.data,
+            load: false
+          });
+        })
+        .catch(err => {
+          console.log(err);
         });
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  };
+    };
+  
 
   //finding by id in the database and returning everything in the state that doesn't match current id
   deleteCategory = id => {

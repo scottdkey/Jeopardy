@@ -16,7 +16,12 @@ export default class CardForm extends React.Component{
     category:'',
     name:'',
     points:'',
-    answers:'',
+    answerA:'',
+    answerB:'', 
+    answerC: '',
+    answerD:'',
+    correct:"",
+    toggleForm:false,
   }
 
   componentDidMount(){
@@ -30,14 +35,7 @@ export default class CardForm extends React.Component{
     })
   }
 
-  handleChange = (e) => {
-    // console.log(e)
-    const name = e.target.name
-    const value = e.target.value
-    this.setState({
-      [name]:value
-    })
-  }
+  handleChange = (e, {name, value}) => {this.setState({[name]:value})}
 
   handleSubmit = (e) => {
     e.preventDefault()
@@ -66,7 +64,7 @@ export default class CardForm extends React.Component{
 
   
   render(){
-    const {category, name, points, answers, } = this.state
+    const {category, name, points, answerA, answerB, answerC, answerD, correct} = this.state
     return(
       <>
       <Container>
@@ -94,7 +92,7 @@ export default class CardForm extends React.Component{
             <Form.Input
               width={6} 
               label='Card Question'
-              name='name'
+              name='question'
               placeholder='Card Question'
               value={name}
               onChange={this.handleChange}
@@ -102,43 +100,43 @@ export default class CardForm extends React.Component{
           </Form.Group>
             <p>Please Enter 4 Answers</p>
             <p>Choose One Answer as the Correct Response</p>
-              <Form.Input
-                width={12} 
-                label='Answer 1'
-                name='name'
-                placeholder='Answer'
-                value={answers}
-                onChange={this.handleChange}
-              />
-              {/* needs some kind of radio button here  */}
-              <Form.Input 
-                width={12} 
-                label='Answer 2'
-                name='name'
-                placeholder='Answer'
-                value={answers}
-                onChange={this.handleChange}
-              />
-              {/* needs some kind of radio button here  */}
-              <Form.Input
-                width={12} 
-                label='Answer 3'
-                name='name'
-                placeholder='Answer'
-                value={answers}
-                onChange={this.handleChange}
-              />
-              {/* needs some kind of radio button here  */}
-              <Form.Input 
-                width={12} 
-                label='Answer 4'
-                name='name'
-                placeholder='Answer'
-                value={answers}
-                onChange={this.handleChange}
-              />
-              {/* needs some kind of radio button here  */}
-              <Button color='blue'>Submit</Button>
+            <Form.Input
+              width={12} 
+              label='Answer A'
+              name='answerA'
+              placeholder='AnswerA'
+              value={answerA}
+              onChange={this.handleChange}
+            />
+            {/* needs some kind of radio button here  */}
+            <Form.Input 
+              width={12} 
+              label='AnswersB'
+              name='answerB'
+              placeholder='AnswerB'
+              value={answerB}
+              onChange={this.handleChange}
+            />
+            {/* needs some kind of radio button here  */}
+            <Form.Input
+              width={12} 
+              label='Answers C'
+              name='answerC'
+              placeholder='Answer'
+              value={answerC}
+              onChange={this.handleChange}
+            />
+            {/* needs some kind of radio button here  */}
+            <Form.Input 
+              width={12} 
+              label='Answers D'
+              name='answerD'
+              placeholder='Answer'
+              value={answerD}
+              onChange={this.handleChange}
+            />
+            {/* needs some kind of radio button here  */}
+            <Button color='blue'>Submit</Button>
           </Form>
         </Container>
       </>
