@@ -14,7 +14,11 @@ export default class CardForm extends React.Component{
     category:'',
     name:'',
     points:'',
-    answers:'',
+    answerA:'',
+    answerB:'', 
+    answerC: '',
+    answerD:'',
+    correct:"",
     toggleForm:false,
   }
 
@@ -23,14 +27,7 @@ export default class CardForm extends React.Component{
     //honestly not sure what may or may not need to be here
   }
 
-  handleChange = (e) => {
-    // console.log(e)
-    const name = e.target.name
-    const value = e.target.value
-    this.setState({
-      [name]:value
-    })
-  }
+  handleChange = (e, {name, value}) => {this.setState({[name]:value})}
 
   handleSubmit = (e) => {
     console.log('clicked')
@@ -44,7 +41,7 @@ export default class CardForm extends React.Component{
 
 
   render(){
-    const {category, name, points, answers} = this.state
+    const {category, name, points, answerA, answerB, answerC, answerD, correct} = this.state
     return(
       <>
       <Container>
@@ -71,7 +68,7 @@ export default class CardForm extends React.Component{
             <Form.Input
               width={6} 
               label='Card Question'
-              name='name'
+              name='question'
               placeholder='Card Question'
               value={name}
               onChange={this.handleChange}
@@ -81,37 +78,37 @@ export default class CardForm extends React.Component{
             <p>Choose One Answer as the Correct Response</p>
             <Form.Input
               width={12} 
-              label='Answers'
-              name='name'
-              placeholder='Answer'
-              value={answers}
+              label='Answer A'
+              name='answerA'
+              placeholder='AnswerA'
+              value={answerA}
               onChange={this.handleChange}
             />
             {/* needs some kind of radio button here  */}
             <Form.Input 
               width={12} 
-              label='Answers'
-              name='name'
-              placeholder='Answer'
-              value={answers}
+              label='AnswersB'
+              name='answerB'
+              placeholder='AnswerB'
+              value={answerB}
               onChange={this.handleChange}
             />
             {/* needs some kind of radio button here  */}
             <Form.Input
               width={12} 
-              label='Answers'
-              name='name'
+              label='Answers C'
+              name='answerC'
               placeholder='Answer'
-              value={answers}
+              value={answerC}
               onChange={this.handleChange}
             />
             {/* needs some kind of radio button here  */}
             <Form.Input 
               width={12} 
-              label='Answers'
-              name='name'
+              label='Answers D'
+              name='answerD'
               placeholder='Answer'
-              value={answers}
+              value={answerD}
               onChange={this.handleChange}
             />
             {/* needs some kind of radio button here  */}
