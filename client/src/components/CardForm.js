@@ -21,7 +21,13 @@ export default class CardForm extends React.Component{
 
   componentDidMount(){
     console.log('mounted')
-    // this.pullData()
+    axios.get('api/cards')
+    .then(res => {
+
+    })
+    .catch(err => {
+
+    })
   }
 
   handleChange = (e) => {
@@ -34,9 +40,29 @@ export default class CardForm extends React.Component{
   }
 
   handleSubmit = (e) => {
-    console.log('clicked')
-    //where should this submit to axios-wise? Not sure how we'll make adding new ones work
+    e.preventDefault()
+    axios.post('api/cards')
+    .then(res => {
+
+    })
+    .catch(err => {
+
+    })
   }
+
+  pullData = () => {
+    axios
+      .get("api/categories")
+      .then(res => {
+        this.setState({
+          categories: res.data,
+          load: true
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
 
   
   render(){
@@ -48,8 +74,7 @@ export default class CardForm extends React.Component{
           <Form onSubmit={this.handleSubmit}>
           <Form.Group >
             <Form.Select
-              // option value={Categories} something like this right here to render pre-made categories?
-              // option value={Categories} 
+              // options={categorySelect} 
               width={6}
               label='Choose Category'
               name='category'
@@ -77,43 +102,43 @@ export default class CardForm extends React.Component{
           </Form.Group>
             <p>Please Enter 4 Answers</p>
             <p>Choose One Answer as the Correct Response</p>
-            <Form.Input
-              width={12} 
-              label='Answers'
-              name='name'
-              placeholder='Answer'
-              value={answers}
-              onChange={this.handleChange}
-            />
-            {/* needs some kind of radio button here  */}
-            <Form.Input 
-              width={12} 
-              label='Answers'
-              name='name'
-              placeholder='Answer'
-              value={answers}
-              onChange={this.handleChange}
-            />
-            {/* needs some kind of radio button here  */}
-            <Form.Input
-              width={12} 
-              label='Answers'
-              name='name'
-              placeholder='Answer'
-              value={answers}
-              onChange={this.handleChange}
-            />
-            {/* needs some kind of radio button here  */}
-            <Form.Input 
-              width={12} 
-              label='Answers'
-              name='name'
-              placeholder='Answer'
-              value={answers}
-              onChange={this.handleChange}
-            />
-            {/* needs some kind of radio button here  */}
-            <Button color='blue'>Submit</Button>
+              <Form.Input
+                width={12} 
+                label='Answer 1'
+                name='name'
+                placeholder='Answer'
+                value={answers}
+                onChange={this.handleChange}
+              />
+              {/* needs some kind of radio button here  */}
+              <Form.Input 
+                width={12} 
+                label='Answer 2'
+                name='name'
+                placeholder='Answer'
+                value={answers}
+                onChange={this.handleChange}
+              />
+              {/* needs some kind of radio button here  */}
+              <Form.Input
+                width={12} 
+                label='Answer 3'
+                name='name'
+                placeholder='Answer'
+                value={answers}
+                onChange={this.handleChange}
+              />
+              {/* needs some kind of radio button here  */}
+              <Form.Input 
+                width={12} 
+                label='Answer 4'
+                name='name'
+                placeholder='Answer'
+                value={answers}
+                onChange={this.handleChange}
+              />
+              {/* needs some kind of radio button here  */}
+              <Button color='blue'>Submit</Button>
           </Form>
         </Container>
       </>
@@ -130,3 +155,7 @@ const options = [
   { key: 'd', text: '400', value: 400 },
   { key: 'e', text: '500', value: 500 },
 ]
+
+// const categorySelect = [
+//   this.pullData()
+// ]

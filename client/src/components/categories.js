@@ -15,7 +15,17 @@ class Categories extends Component {
   //sepreate pull data function to be able to reset the state of the page
   //reusing it in the component did mount
   pullData = () => {
-    this.props.pullData
+    axios
+      .get("api/categories")
+      .then(res => {
+        this.setState({
+          categories: res.data,
+          load: false
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   //finding by id in the database and returning everything in the state that doesn't match current id

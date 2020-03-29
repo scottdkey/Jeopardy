@@ -4,6 +4,7 @@ import './App.css';
 import Categories from './Components/categories';
 // import {Card} from 'semantic-ui-react'
 import CardForm from './Components/CardForm'
+import axios from 'axios';
 
 
 class App extends Component {
