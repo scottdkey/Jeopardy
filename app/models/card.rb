@@ -2,5 +2,5 @@
 
 class Card < ApplicationRecord
   belongs_to :category
-  has_one :answers, dependent: :destroy
+  has_many :answers, dependent: :destroy
 end

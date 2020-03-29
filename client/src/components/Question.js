@@ -13,9 +13,10 @@ class Question extends Component {
     Axios.get('/api/answers').then(res =>{
       const answers = res.data.filter(a => {
         if (qID === a.id){
+          console.log(a)
           return a
         }
-        
+
         })
      
     }).catch(err =>{})
