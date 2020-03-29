@@ -9,8 +9,8 @@ export default class Questions extends React.Component {
  //cards need state?
   state = {
     questions: [],
-    category: this.props.category
-
+    category: this.props.category,
+    
   }
 
  currentCategoryQuestions = (arrayOfAllQuestions, catID) => {
@@ -46,22 +46,23 @@ export default class Questions extends React.Component {
   deleteQuestion(){
 
   }
+  
 
 
 
 
 
   render(){
-    const {questions, category} = this.state
-    return(
+    const {questions, showQuestion}= this.state
+    return (
       <>
-        {questions.map( question => (
+        {questions.map(question => (
           <Card key={question.id}>
-            <Question q={question} c={category}/>
+            <Question q={question} />
           </Card>
         ))}
       </>
-    )
+    );
   }
   
 
