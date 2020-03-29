@@ -1,9 +1,9 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import Categories from './components/categories';
+import Categories from './Components/categories';
 // import {Card} from 'semantic-ui-react'
-import CardForm from './components/CardForm'
+import CardForm from './Components/CardForm'
 
 
 function App() {

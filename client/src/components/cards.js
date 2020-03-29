@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios'
 import { Card, Button } from 'semantic-ui-react'
+import Card from './Components/card'
 
 
 
@@ -30,17 +31,29 @@ export default class Cards extends React.Component {
 
   }
 
-
+  toggleForm = () => {
+    this.setState({
+      toggleForm: !this.state.toggleForm
+    });
+  };
 
 
 
   render(){
     return(
-      <Card.Group itemsPerRow={5}>
-        {/* { Cards.map( {category, card} =>  */}
-        <card />
-        {/* )} */}
-      </Card.Group>
+      <>
+        <Card.Group itemsPerRow={5}>
+          {/* { Cards.map( {category, card} =>  */}
+          <Card />
+          {/* )} */}
+        </Card.Group>
+        <div>
+          {toggleForm ? ( <CardForm reset={this.pullData} toggleForm={this.toggleForm} /> ) : null}
+          <Button onClick={() => this.toggleForm()}>
+            {toggleForm ? "hide" : "New Card"}
+          </Button>
+        </div>
+      </>
     )
   }
   

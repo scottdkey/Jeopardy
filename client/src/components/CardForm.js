@@ -1,5 +1,7 @@
 import React from 'react';
 import {Form, Header, Button, Container} from 'semantic-ui-react';
+import axios from 'axios';
+// import Categories from './categories';
 
 
 //need a form on this page that allows a user to create new cards
@@ -20,7 +22,19 @@ export default class CardForm extends React.Component{
 
   componentDidMount(){
     console.log('mounted')
-    //honestly not sure what may or may not need to be here
+    axios
+      .get("api/categories")
+      .then(res => {
+        const categorySelect = Array
+        .from(new Set(res.data
+          .map(i => i.category)))
+          .map(
+          (d, i) => {
+            return { value: d, key: i+1, text: d };
+          }
+        )
+      }
+    )
   }
 
   handleChange = (e) => {
@@ -37,14 +51,9 @@ export default class CardForm extends React.Component{
     //where should this submit to axios-wise? Not sure how we'll make adding new ones work
   }
 
-  toggleForm = () => {
-    //needs to be built out and needs a button somewhere
-  }
-
-
-
+  
   render(){
-    const {category, name, points, answers} = this.state
+    const {category, name, points, answers, } = this.state
     return(
       <>
       <Container>
@@ -53,6 +62,7 @@ export default class CardForm extends React.Component{
           <Form.Group >
             <Form.Select
               // option value={Categories} something like this right here to render pre-made categories?
+              // option value={Categories} 
               width={6}
               label='Choose Category'
               name='category'
@@ -61,7 +71,8 @@ export default class CardForm extends React.Component{
               onChange={this.handleChange}
             />
             <Form.Select 
-            width={6}
+              width={6}
+              options={options}
               label='Point Value'
               name='points'
               placeholder='Select Point Value'
@@ -123,3 +134,12 @@ export default class CardForm extends React.Component{
   }
 
 }
+
+
+const options = [
+  { key: 'a', text: '100', value: 100 },
+  { key: 'b', text: '200', value: 200 },
+  { key: 'c', text: '300', value: 300 },
+  { key: 'd', text: '400', value: 400 },
+  { key: 'e', text: '500', value: 500 },
+]
