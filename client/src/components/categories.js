@@ -3,7 +3,6 @@ import { Card, Button } from "semantic-ui-react";
 import axios from "axios";
 import Category from "./category";
 import CategoryForm from "./CategoryForm";
-import Questions from "./Questions";
 // import Cards from './cards'
 
 class Categories extends Component {
@@ -67,6 +66,7 @@ class Categories extends Component {
             {categories.map(c => (
               <Card key={c.id}>
                 <Category
+                  {...this.props}
                   delete={this.deleteCategory}
                   reset={this.pullData}
                   category={c}
