@@ -13,13 +13,13 @@ import Categories from './categories';
 export default class CardForm extends React.Component{
 
   state={
-    category:'',
-    question:'',
+    category:1,
+    name:'',
     points:'',
-    answerA:'',
-    answerB:'', 
-    answerC: '',
-    answerD:'',
+    a:'',
+    b:'', 
+    c: '',
+    d:'',
     correct:"",
   }
 
@@ -39,27 +39,34 @@ export default class CardForm extends React.Component{
   handleCorrectAnswer = (e, { value }) => this.setState({ value })
 
   handleSubmit = (e) => {
+    const category = 1
     e.preventDefault()
-    axios.post('api/cards')
-    .then(res => {
-      console.log(res)
-      this.setState({
-        question:'',
-        points:'',
-        complete:'',
+    const {name, points, a, b, c, d, correct } = this.state
+    axios
+      .post("/api/cards", {
+        name,
+        points,
+        category_id: category
       })
-    })
-    .catch(err => {
-      console.log(err)
-    })
-    axios.post('api/answers')
+      .then(res => {
+        this.setState({
+          question: "",
+          points: "",
+          complete: false
+        });
+      })
+      .catch(err => {
+        console.log(err);
+        console.log("in the err");
+      });
+    axios.post('/api/answers', {a, b, c, d, correct})
     .then(res => {
       console.log(res)
       this.setState({
-        answerA:'',
-        answerB:'',
-        answerC:'',
-        answerD:'',
+        a:'',
+        b:'',
+        c:'',
+        d:'',
         correct:'',
       })
     }).catch(err => {
@@ -67,7 +74,7 @@ export default class CardForm extends React.Component{
     })
   }
 
-  pullData = (id) => {
+  getCategories = (id) => {
     axios
       .get("api/categories", id)
       .then(res => {
@@ -82,7 +89,7 @@ export default class CardForm extends React.Component{
 
   
   render(){
-    const {category, question, points, answerA, answerB, answerC, answerD, value, categories, correct} = this.state
+    const {category, question, points, a, b, c, d, value, categories, correct} = this.state
     return(
       <>
       <Container>
@@ -110,7 +117,7 @@ export default class CardForm extends React.Component{
             <Form.Input
               width={6} 
               label='Card Question'
-              name='question'
+              name='name'
               placeholder='Card Question'
               value={question}
               onChange={this.handleChange}
@@ -122,16 +129,16 @@ export default class CardForm extends React.Component{
               <Form.Input
                 width={12} 
                 label='Answer A'
-                name='answerA'
+                name='a'
                 placeholder='Answer A'
-                value={answerA}
+                value={a}
                 onChange={this.handleChange}
               />
                 <Form.Field
                   control={Radio}
                   label='Correct'
-                  value='1'
-                  checked={value === '1'}
+                  value={a}
+                  checked={value === a}
                   onChange={this.handleCorrectAnswer}
                 />
             </Form.Group>
@@ -139,16 +146,16 @@ export default class CardForm extends React.Component{
               <Form.Input 
                 width={12} 
                 label='Answer B'
-                name='answerB'
+                name='b'
                 placeholder='Answer B'
-                value={answerB}
+                value={b}
                 onChange={this.handleChange}
               />
               <Form.Field
                   control={Radio}
                   label='Correct'
-                  value='2'
-                  checked={value === '2'}
+                  value={b}
+                  checked={value === b}
                   onChange={this.handleCorrectAnswer}
                 />
             </Form.Group>
@@ -156,16 +163,16 @@ export default class CardForm extends React.Component{
               <Form.Input
                 width={12} 
                 label='Answer C'
-                name='answerC'
+                name='c'
                 placeholder='Answer C'
-                value={answerC}
+                value={c}
                 onChange={this.handleChange}
               />
               <Form.Field
                 control={Radio}
                 label='Correct'
-                value='3'
-                checked={value === '3'}
+                value={c}
+                checked={value === c}
                 onChange={this.handleCorrectAnswer}
               />
             </Form.Group>
@@ -173,16 +180,16 @@ export default class CardForm extends React.Component{
               <Form.Input 
                 width={12} 
                 label='Answer D'
-                name='answerD'
+                name='d'
                 placeholder='Answer D'
-                value={answerD}
+                value={d}
                 onChange={this.handleChange}
               />
               <Form.Field
                 control={Radio}
                 label='Correct'
-                value='4'
-                checked={value === '4'}
+                value={d}
+                checked={value === d}
                 onChange={this.handleCorrectAnswer}
               />
             </Form.Group>

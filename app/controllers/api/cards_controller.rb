@@ -18,7 +18,7 @@ class Api::CardsController < ApplicationController
     if card.save
       render json: card
     else
-      render json: item.errors, status: 446
+      render json: card.errors, status: 446
     end
   end
 
@@ -39,7 +39,7 @@ class Api::CardsController < ApplicationController
   private
 
   def card_params
-    params.require(:card).permit(:name, :complete, :points, :id)
+    params.require(:card).permit(:name, :complete, :points, :id, :category_id)
   end
 
   def set_card
