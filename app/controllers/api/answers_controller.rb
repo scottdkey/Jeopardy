@@ -14,7 +14,6 @@ class Api::AnswersController < ApplicationController
   # error 446 represents error in creating a creation
   def create
     answer = Answer.new(answer_params)
-
     if answer.save
       render json: answer
     else
@@ -39,7 +38,7 @@ class Api::AnswersController < ApplicationController
   private
 
   def answer_params
-    params.require(:answer).permit(:a, :b, :c, :d, :complete, :correct)
+    params.require(:answer).permit(:a, :b, :c, :d, :correct, :card_id)
   end
 
   def set_answer

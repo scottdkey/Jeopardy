@@ -17,10 +17,10 @@ export default class CardForm extends React.Component{
     points:'',
     a:'',
     b:'', 
-    c: '',
+    c:'',
     d:'',
     correct:"",
-    categoryOptions: []
+    categoryOptions: [],
   }
 
   componentDidMount(){
@@ -36,18 +36,16 @@ export default class CardForm extends React.Component{
     .catch(err => {console.log(err)})
   }
 
-  handleChange = (e, {name, value}) => {
-    this.setState({[name]:value})
-    console.log(name)
-    console.log(this.state.correct)
+  handleChange = (e, {name, value}) => {this.setState({[name]:value})}
+
+  handleCorrectAnswer = (e, { value }) => {
+    console.log(value);
+    this.setState({ correct: value });
+    
   }
 
-  handleCorrectAnswer = (e, { value }) => this.setState({ correct: value })
-
-  handleSubmit = (e) => {
-    const category = this.state.category
-    e.preventDefault()
-    const {name, points, a, b, c, d, correct } = this.state
+  createQuestion(){
+    const { name, points, category } = this.state;
     axios
       .post("/api/cards", {
         name,
@@ -55,31 +53,50 @@ export default class CardForm extends React.Component{
         category_id: category
       })
       .then(res => {
+        console.log(res.data.id)
+        this.createAnswers(res.data.id)
         this.setState({
           question: "",
           points: "",
-          complete: false
+          complete: false,
         });
       })
       .catch(err => {
         console.log(err);
         console.log("in the err");
       });
-    let test = {a, b, c, d, correct}
-    console.log(test)
-    axios.post('/api/answers', {a, b, c, d, correct})
-    .then(res => {
-      console.log(res)
-      this.setState({
-        a:'',
-        b:'',
-        c:'',
-        d:'',
-        correct:'',
+  }
+
+  createAnswers(card_id){
+    const { a, b, c, d, correct} = this.state;
+    console.log(card_id)
+    axios
+      .post("/api/answers", { 
+        a, 
+        b, 
+        c, 
+        d, 
+        correct, 
+        card_id
       })
-    }).catch(err => {
-      console.log(err)
-    })
+      .then(res => {
+        console.log(res);
+        this.setState({
+          a: "",
+          b: "",
+          c: "",
+          d: "",
+          correct: "",
+          });
+        })
+        .catch(err => {
+          console.log(err);
+        });
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+    this.createQuestion()
   }
 
   getCategories = (id) => {
@@ -145,9 +162,8 @@ export default class CardForm extends React.Component{
                 <Form.Field
                   control={Radio}
                   label='Correct'
-                  name='correct'
-                  value={correct}
-                  checked={value === a}
+                  value={a}
+                  checked={correct === a}
                   onChange={this.handleCorrectAnswer}
                 />
             </Form.Group>
@@ -163,9 +179,8 @@ export default class CardForm extends React.Component{
               <Form.Field
                   control={Radio}
                   label='Correct'
-                  name='correct'
-                  value={correct}
-                  checked={value === b}
+                  value={b}
+                  checked={correct === b}
                   onChange={this.handleCorrectAnswer}
                 />
             </Form.Group>
@@ -181,9 +196,8 @@ export default class CardForm extends React.Component{
               <Form.Field
                 control={Radio}
                 label='Correct'
-                name='correct'
-                value={correct}
-                checked={value === c}
+                value={c}
+                checked={correct === c}
                 onChange={this.handleCorrectAnswer}
               />
             </Form.Group>
@@ -199,9 +213,8 @@ export default class CardForm extends React.Component{
               <Form.Field
                 control={Radio}
                 label='Correct'
-                name="correct"
-                value={correct}
-                checked={value === d}
+                value={d}
+                checked={correct === d}
                 onChange={this.handleCorrectAnswer}
               />
             </Form.Group>
