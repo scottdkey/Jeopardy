@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import {Card, Button} from 'semantic-ui-react'
-import axios from 'axios';
+import React, { Component } from "react";
+import { Card, Button } from "semantic-ui-react";
+import axios from "axios";
 
 class Question extends Component {
   state = {
@@ -32,57 +32,58 @@ class Question extends Component {
   toggleQuestion() {
     this.setState({ showQuestion: !this.state.showQuestion });
   }
-  checkAnswer = (answerTextValue) => {
+  checkAnswer = answerTextValue => {
     const { points } = this.state.question;
-    const {add, subtract} = this.props
+    const { add, subtract } = this.props;
     if (answerTextValue === this.state.answers.correct) {
-      add(points)
-      this.complete()
-      this.toggleQuestion()
+      add(points);
+      this.complete();
+      this.toggleQuestion();
     } else {
-      subtract(points)
-      this.complete()
+      subtract(points);
+      this.complete();
       //tell the player they lost
-      this.toggleQuestion()
+      this.toggleQuestion();
     }
-  }
-  complete = () =>{
-    const {question} = this.state
-    let questionUpdate = {complete: question.complete = true}
-    console.log(questionUpdate)
+  };
+  complete = () => {
+    const { question } = this.state;
+    let questionUpdate = { complete: (question.complete = true) };
+    console.log(questionUpdate);
     axios
-    .put(`/api/cards/${question.id}.${question}`)
-    .then(data => {
-      console.log(data);
-      return 
-    })
-    .catch(err =>{console.log(err)})
-
-  }
+      .put(`/api/cards/${question.id}.${question}`)
+      .then(data => {
+        console.log(data);
+        return;
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
 
   questionContainer() {
     const { question, answers } = this.state;
     return (
       <>
-      <Card key={question.id}>
-        <Card.Content>
-          <Card.Header>{question.name}</Card.Header>
-        </Card.Content>
-        <Card.Description>
-          <Button onClick={() => this.checkAnswer(answers.a)} color="orange">
-            {answers.a}
-          </Button>
-          <Button onClick={() => this.checkAnswer(answers.b)} color="green">
-            {answers.b}
-          </Button>
-          <Button onClick={() => this.checkAnswer(answers.c)} color="pink">
-            {answers.c}
-          </Button>
-          <Button onClick={() => this.checkAnswer(answers.d)} color="blue">
-            {answers.d}
-          </Button>
-          {/* <Button>{answers.correct}</Button> */}
-        </Card.Description>
+        <Card key={question.id}>
+          <Card.Content>
+            <Card.Header>{question.name}</Card.Header>
+          </Card.Content>
+          <Card.Description>
+            <Button onClick={() => this.checkAnswer(answers.a)} color="orange">
+              {answers.a}
+            </Button>
+            <Button onClick={() => this.checkAnswer(answers.b)} color="green">
+              {answers.b}
+            </Button>
+            <Button onClick={() => this.checkAnswer(answers.c)} color="pink">
+              {answers.c}
+            </Button>
+            <Button onClick={() => this.checkAnswer(answers.d)} color="blue">
+              {answers.d}
+            </Button>
+            {/* <Button>{answers.correct}</Button> */}
+          </Card.Description>
         </Card>
       </>
     );
@@ -103,4 +104,4 @@ class Question extends Component {
   }
 }
 
-export default Question
+export default Question;

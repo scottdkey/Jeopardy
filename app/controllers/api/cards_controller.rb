@@ -14,11 +14,10 @@ class Api::CardsController < ApplicationController
   # error 446 represents error in creating
   def create
     card = Card.new(card_params)
-
     if card.save
       render json: card
     else
-      render json: card.errors, status: 446
+      # render json: card.errors, status: 446
     end
   end
 
@@ -28,7 +27,7 @@ class Api::CardsController < ApplicationController
     if card.save
       render json: card
     else
-      render json: card.errors, status: 447
+      # render json: card.errors, status: 447
     end
   end
 

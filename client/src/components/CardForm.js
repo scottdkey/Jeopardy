@@ -1,7 +1,6 @@
 import React from 'react';
 import {Form, Header, Button, Container, Radio} from 'semantic-ui-react';
 import axios from 'axios';
-import Categories from './categories';
 
 
 //need a form on this page that allows a user to create new cards
@@ -13,7 +12,7 @@ import Categories from './categories';
 export default class CardForm extends React.Component{
 
   state={
-    category:1,
+    category: '',
     name:'',
     points:'',
     a:'',
@@ -21,25 +20,32 @@ export default class CardForm extends React.Component{
     c: '',
     d:'',
     correct:"",
+    categoryOptions: []
   }
 
   componentDidMount(){
-    console.log('mounted')
-    axios.get('api/cards')
+    axios.get('api/categories')
     .then(res => {
-
+      const categoryOptions = Array.from(new Set(
+        res.data.map( (c, i)=>{
+          return {value: c.id, key: i, text: c.name}
+        })
+      ))
+      this.setState({categoryOptions})
     })
-    .catch(err => {
-
-    })
+    .catch(err => {console.log(err)})
   }
 
-  handleChange = (e, {name, value}) => {this.setState({[name]:value})}
+  handleChange = (e, {name, value}) => {
+    this.setState({[name]:value})
+    console.log(name)
+    console.log(this.state.correct)
+  }
 
-  handleCorrectAnswer = (e, { value }) => this.setState({ value })
+  handleCorrectAnswer = (e, { value }) => this.setState({ correct: value })
 
   handleSubmit = (e) => {
-    const category = 1
+    const category = this.state.category
     e.preventDefault()
     const {name, points, a, b, c, d, correct } = this.state
     axios
@@ -59,6 +65,8 @@ export default class CardForm extends React.Component{
         console.log(err);
         console.log("in the err");
       });
+    let test = {a, b, c, d, correct}
+    console.log(test)
     axios.post('/api/answers', {a, b, c, d, correct})
     .then(res => {
       console.log(res)
@@ -89,7 +97,7 @@ export default class CardForm extends React.Component{
 
   
   render(){
-    const {category, question, points, a, b, c, d, value, categories, correct} = this.state
+    const {category, name, points, a, b, c, d, value, correct, categoryOptions} = this.state
     return(
       <>
       <Container>
@@ -97,7 +105,7 @@ export default class CardForm extends React.Component{
           <Form onSubmit={this.handleSubmit}>
           <Form.Group >
             <Form.Select
-              options={categories}
+              options={categoryOptions}
               width={6}
               label='Choose Category'
               name='category'
@@ -119,7 +127,7 @@ export default class CardForm extends React.Component{
               label='Card Question'
               name='name'
               placeholder='Card Question'
-              value={question}
+              value={name}
               onChange={this.handleChange}
             />
           </Form.Group>
@@ -137,7 +145,8 @@ export default class CardForm extends React.Component{
                 <Form.Field
                   control={Radio}
                   label='Correct'
-                  value={a}
+                  name='correct'
+                  value={correct}
                   checked={value === a}
                   onChange={this.handleCorrectAnswer}
                 />
@@ -154,7 +163,8 @@ export default class CardForm extends React.Component{
               <Form.Field
                   control={Radio}
                   label='Correct'
-                  value={b}
+                  name='correct'
+                  value={correct}
                   checked={value === b}
                   onChange={this.handleCorrectAnswer}
                 />
@@ -171,7 +181,8 @@ export default class CardForm extends React.Component{
               <Form.Field
                 control={Radio}
                 label='Correct'
-                value={c}
+                name='correct'
+                value={correct}
                 checked={value === c}
                 onChange={this.handleCorrectAnswer}
               />
@@ -188,7 +199,8 @@ export default class CardForm extends React.Component{
               <Form.Field
                 control={Radio}
                 label='Correct'
-                value={d}
+                name="correct"
+                value={correct}
                 checked={value === d}
                 onChange={this.handleCorrectAnswer}
               />

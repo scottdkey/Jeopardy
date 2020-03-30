@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios'
-import { Card } from 'semantic-ui-react'
 import Question from "./Question"
 
 
@@ -12,7 +11,7 @@ export default class Questions extends React.Component {
     category: this.props.category,
   }
 
- currentCategoryQuestions = (arrayOfAllQuestions, catID) => {
+ currentCategoryQuestions(arrayOfAllQuestions, catID){
   const filtered = arrayOfAllQuestions.filter(q => {
     if (q.category_id === catID){
       return q
