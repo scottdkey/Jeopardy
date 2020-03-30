@@ -15,7 +15,6 @@ class App extends Component {
     this.setState({
       total_points
     })
-    console.log(this.state.total_points)
   }
   subtractPoints = (ammount) => {
     this.setState({

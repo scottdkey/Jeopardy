@@ -7,7 +7,6 @@ class Question extends Component {
     question: this.props.q,
     answers: [],
     correct: false,
-    complete: false,
     showQuestion: false
   };
 
@@ -38,26 +37,33 @@ class Question extends Component {
     const {add, subtract} = this.props
     if (answerTextValue === this.state.answers.correct) {
       add(points)
-      this.setState({
-        correct: true,
-        complete: true
-      })
+      this.complete()
       this.toggleQuestion()
     } else {
       subtract(points)
-      this.setState({
-        complete: true
-      })
+      this.complete()
       //tell the player they lost
-      console.log(this.state.incorrect);
       this.toggleQuestion()
     }
+  }
+  complete = () =>{
+    const {question} = this.state
+    console.log(question)
+    axios
+    .put(`/api/cards/${question.id}.${question}`)
+    .then(data => {
+      console.log(data);
+      return 
+    })
+    .catch(err =>{console.log(err)})
+
   }
 
   questionContainer() {
     const { question, answers } = this.state;
     return (
       <>
+      <Card key={question.id}>
         <Card.Content>
           <Card.Header>{question.name}</Card.Header>
         </Card.Content>
@@ -76,6 +82,7 @@ class Question extends Component {
           </Button>
           {/* <Button>{answers.correct}</Button> */}
         </Card.Description>
+        </Card>
       </>
     );
   }

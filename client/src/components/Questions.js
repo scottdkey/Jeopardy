@@ -10,7 +10,6 @@ export default class Questions extends React.Component {
   state = {
     questions: [],
     category: this.props.category,
-    
   }
 
  currentCategoryQuestions = (arrayOfAllQuestions, catID) => {
@@ -21,8 +20,6 @@ export default class Questions extends React.Component {
   })
   return filtered
 }
-
-
 
   //this should pull all our cards from the database, currently has some syntax error I can't figure out
   componentDidMount() {
@@ -48,22 +45,16 @@ export default class Questions extends React.Component {
 
   }
   
-
-
-
-
-
   render(){
     const {questions}= this.state
     return (
       <>
         {questions.map(question => (
-          <Card key={question.id}>
             <Question
+              id={question.id}
               q={question}
               {...this.props}
             />
-          </Card>
         ))}
       </>
     );
