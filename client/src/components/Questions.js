@@ -10,7 +10,6 @@ export default class Questions extends React.Component {
   state = {
     questions: [],
     category: this.props.category,
-    
   }
 
  currentCategoryQuestions = (arrayOfAllQuestions, catID) => {
@@ -22,8 +21,12 @@ export default class Questions extends React.Component {
   return filtered
 }
 
+<<<<<<< HEAD
 
 
+=======
+  //this should pull all our cards from the database, currently has some syntax error I can't figure out
+>>>>>>> b42fa1c1dd0243ff388b5135ad73549fb308b467
   componentDidMount() {
     const catID = this.props.category.id
     axios.get('/api/cards')
@@ -47,22 +50,16 @@ export default class Questions extends React.Component {
 
   }
   
-
-
-
-
-
   render(){
     const {questions}= this.state
     return (
       <>
         {questions.map(question => (
-          <Card key={question.id}>
             <Question
+              id={question.id}
               q={question}
               {...this.props}
             />
-          </Card>
         ))}
       </>
     );

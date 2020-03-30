@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
 class Api::CardsController < ApplicationController
-
   before_action :set_card, only: %i[show update destroy]
-  
+
   def index
     render json: Card.all
   end
@@ -40,7 +39,7 @@ class Api::CardsController < ApplicationController
   private
 
   def card_params
-    params.require(:card).permit(:name, :complete, :points)
+    params.require(:card).permit(:name, :complete, :points, :id)
   end
 
   def set_card
