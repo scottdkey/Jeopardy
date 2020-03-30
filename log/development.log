@@ -36432,3 +36432,589 @@ Processing by Api::AnswersController#index as HTML
 Completed 200 OK in 13ms (Views: 9.5ms | ActiveRecord: 0.7ms | Allocations: 4026)
 
 
+Started PUT "/api/cards/26.[object%20Object]" for 127.0.0.1 at 2020-03-29 19:16:27 -0600
+Processing by Api::CardsController#update as 
+  Parameters: {"id"=>"26"}
+  [1m[36mCard Load (1.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:46:in `set_card'
+Completed 500  in 7ms (ActiveRecord: 1.5ms | Allocations: 3291)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: card:
+  app/controllers/api/cards_controller.rb:42:in `card_params'
+  app/controllers/api/cards_controller.rb:27:in `update'
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-29 19:17:33 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.6ms | Allocations: 2944)
+
+
+Started GET "/api/cards" for 127.0.0.1 at 2020-03-29 19:17:33 -0600
+Processing by Api::CardsController#index as HTML
+  [1m[36mCard Load (0.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/cards_controller.rb:7:in `index'
+Completed 200 OK in 10ms (Views: 7.3ms | ActiveRecord: 0.7ms | Allocations: 3597)
+
+
+Started GET "/api/cards" for 127.0.0.1 at 2020-03-29 19:17:33 -0600
+Processing by Api::CardsController#index as HTML
+  [1m[36mCard Load (0.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/cards_controller.rb:7:in `index'
+Completed 200 OK in 13ms (Views: 10.4ms | ActiveRecord: 0.9ms | Allocations: 3598)
+
+
+Started GET "/api/cards" for 127.0.0.1 at 2020-03-29 19:17:33 -0600
+Processing by Api::CardsController#index as HTML
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/cards_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.5ms | Allocations: 3598)
+
+
+Started GET "/api/cards" for 127.0.0.1 at 2020-03-29 19:17:33 -0600
+Processing by Api::CardsController#index as HTML
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/cards_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.6ms | Allocations: 3597)
+
+
+Started GET "/api/cards" for 127.0.0.1 at 2020-03-29 19:17:33 -0600
+Processing by Api::CardsController#index as HTML
+  [1m[36mCard Load (0.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/cards_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.7ms | Allocations: 3598)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:17:33 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.9ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.9ms | Allocations: 4029)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:17:33 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.7ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 12ms (Views: 9.2ms | ActiveRecord: 0.7ms | Allocations: 4026)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:17:33 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.7ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.7ms | Allocations: 4026)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:17:33 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.8ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.8ms | Allocations: 4026)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:17:33 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (1.0ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 1.0ms | Allocations: 4027)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:17:33 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.6ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.6ms | Allocations: 4026)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:17:33 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.8ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 11ms (Views: 7.9ms | ActiveRecord: 0.8ms | Allocations: 4027)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:17:33 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.9ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 0.9ms | Allocations: 4027)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:17:33 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.8ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 36ms (Views: 33.5ms | ActiveRecord: 0.8ms | Allocations: 4026)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:17:33 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (4.4ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 15ms (Views: 8.8ms | ActiveRecord: 4.4ms | Allocations: 4027)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-29 19:17:49 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.6ms | Allocations: 2944)
+
+
+Started GET "/api/cards" for 127.0.0.1 at 2020-03-29 19:17:49 -0600
+Processing by Api::CardsController#index as HTML
+  [1m[36mCard Load (0.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/cards_controller.rb:7:in `index'
+Completed 200 OK in 14ms (Views: 10.0ms | ActiveRecord: 0.9ms | Allocations: 3597)
+
+
+Started GET "/api/cards" for 127.0.0.1 at 2020-03-29 19:17:49 -0600
+Processing by Api::CardsController#index as HTML
+  [1m[36mCard Load (0.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/cards_controller.rb:7:in `index'
+Completed 200 OK in 10ms (Views: 7.4ms | ActiveRecord: 0.8ms | Allocations: 3597)
+
+
+Started GET "/api/cards" for 127.0.0.1 at 2020-03-29 19:17:49 -0600
+Processing by Api::CardsController#index as HTML
+  [1m[36mCard Load (0.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/cards_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.8ms | Allocations: 3597)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:17:49 -0600
+Processing by Api::AnswersController#index as HTML
+Started GET "/api/cards" for 127.0.0.1 at 2020-03-29 19:17:49 -0600
+Processing by Api::CardsController#index as HTML
+  [1m[36mAnswer Load (10.8ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+  [1m[36mCard Load (2.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/cards_controller.rb:7:in `index'
+Completed 200 OK in 22ms (Views: 9.2ms | ActiveRecord: 10.8ms | Allocations: 6408)
+
+
+Completed 200 OK in 23ms (Views: 15.6ms | ActiveRecord: 2.7ms | Allocations: 7629)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:17:50 -0600
+Started GET "/api/cards" for 127.0.0.1 at 2020-03-29 19:17:50 -0600
+Processing by Api::CardsController#index as HTML
+Processing by Api::AnswersController#index as HTML
+  [1m[36mCard Load (4.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  [1m[36mAnswer Load (4.9ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/cards_controller.rb:7:in `index'
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 42ms (Views: 35.5ms | ActiveRecord: 4.8ms | Allocations: 4786)
+
+
+Completed 200 OK in 48ms (Views: 41.9ms | ActiveRecord: 4.9ms | Allocations: 7630)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:17:50 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (1.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 11ms (Views: 8.2ms | ActiveRecord: 1.3ms | Allocations: 4026)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:17:50 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.6ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.6ms | Allocations: 4027)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:17:50 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.9ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 29ms (Views: 26.2ms | ActiveRecord: 0.9ms | Allocations: 4026)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:17:50 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.5ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.5ms | Allocations: 4026)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:17:50 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.5ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.5ms | Allocations: 4026)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:17:50 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (1.0ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 1.0ms | Allocations: 4026)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:17:50 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (1.0ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 1.0ms | Allocations: 4027)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:17:50 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.6ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.6ms | Allocations: 4026)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-29 19:18:00 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.8ms | Allocations: 2944)
+
+
+Started GET "/api/cards" for 127.0.0.1 at 2020-03-29 19:18:00 -0600
+Processing by Api::CardsController#index as HTML
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/cards_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.5ms | Allocations: 3597)
+
+
+Started GET "/api/cards" for 127.0.0.1 at 2020-03-29 19:18:00 -0600
+Processing by Api::CardsController#index as HTML
+  [1m[36mCard Load (0.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/cards_controller.rb:7:in `index'
+Completed 200 OK in 10ms (Views: 7.0ms | ActiveRecord: 0.7ms | Allocations: 3597)
+
+
+Started GET "/api/cards" for 127.0.0.1 at 2020-03-29 19:18:00 -0600
+Processing by Api::CardsController#index as HTML
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/cards_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.5ms | Allocations: 3598)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:18:00 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (1.1ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 1.1ms | Allocations: 4240)
+
+
+Started GET "/api/cards" for 127.0.0.1 at 2020-03-29 19:18:00 -0600
+Processing by Api::CardsController#index as HTML
+  [1m[36mCard Load (0.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/cards_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.8ms | Allocations: 3775)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:18:00 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.6ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.6ms | Allocations: 4042)
+
+
+Started GET "/api/cards" for 127.0.0.1 at 2020-03-29 19:18:00 -0600
+Processing by Api::CardsController#index as HTML
+  [1m[36mCard Load (1.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/cards_controller.rb:7:in `index'
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:18:00 -0600
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 1.0ms | Allocations: 4935)
+
+
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.9ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.9ms | Allocations: 4241)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:18:00 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.5ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 10ms (Views: 7.6ms | ActiveRecord: 0.5ms | Allocations: 4026)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:18:00 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.7ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.7ms | Allocations: 4027)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:18:00 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.8ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.8ms | Allocations: 4026)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:18:00 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.8ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 10ms (Views: 7.4ms | ActiveRecord: 0.8ms | Allocations: 4026)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:18:01 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.4ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.4ms | Allocations: 4027)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:18:01 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.4ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.4ms | Allocations: 4026)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:18:01 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.5ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.5ms | Allocations: 4026)
+
+
+Started PUT "/api/cards/24.[object%20Object]" for 127.0.0.1 at 2020-03-29 19:18:02 -0600
+Processing by Api::CardsController#update as 
+  Parameters: {"id"=>"24"}
+  [1m[36mCard Load (2.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards" WHERE "cards"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/cards_controller.rb:46:in `set_card'
+Completed 500  in 8ms (ActiveRecord: 2.9ms | Allocations: 2977)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: card:
+  app/controllers/api/cards_controller.rb:42:in `card_params'
+  app/controllers/api/cards_controller.rb:27:in `update'
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-29 19:18:22 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (2.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 5.5ms | ActiveRecord: 2.0ms | Allocations: 2944)
+
+
+Started GET "/api/cards" for 127.0.0.1 at 2020-03-29 19:18:22 -0600
+Processing by Api::CardsController#index as HTML
+  [1m[36mCard Load (0.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/cards_controller.rb:7:in `index'
+Completed 200 OK in 10ms (Views: 7.6ms | ActiveRecord: 0.7ms | Allocations: 3597)
+
+
+Started GET "/api/cards" for 127.0.0.1 at 2020-03-29 19:18:22 -0600
+Processing by Api::CardsController#index as HTML
+  [1m[36mCard Load (0.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/cards_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.8ms | Allocations: 3598)
+
+
+Started GET "/api/cards" for 127.0.0.1 at 2020-03-29 19:18:22 -0600
+Processing by Api::CardsController#index as HTML
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/cards_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.6ms | Allocations: 3597)
+
+
+Started GET "/api/cards" for 127.0.0.1 at 2020-03-29 19:18:22 -0600
+Processing by Api::CardsController#index as HTML
+  [1m[36mCard Load (0.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/cards_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.7ms | Allocations: 3597)
+
+
+Started GET "/api/cards" for 127.0.0.1 at 2020-03-29 19:18:22 -0600
+Processing by Api::CardsController#index as HTML
+  [1m[36mCard Load (0.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/cards_controller.rb:7:in `index'
+Completed 200 OK in 10ms (Views: 7.2ms | ActiveRecord: 0.8ms | Allocations: 3598)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:18:22 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (1.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 1.2ms | Allocations: 4240)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:18:22 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.5ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.5ms | Allocations: 4026)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:18:22 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.9ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 0.9ms | Allocations: 4027)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:18:23 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.6ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.6ms | Allocations: 4026)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:18:23 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.9ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 14ms (Views: 11.0ms | ActiveRecord: 0.9ms | Allocations: 4027)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:18:23 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.9ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.9ms | Allocations: 4026)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:18:23 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.7ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.7ms | Allocations: 4027)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:18:23 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.6ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.6ms | Allocations: 4026)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:18:23 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.8ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.8ms | Allocations: 4027)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:18:23 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.6ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.6ms | Allocations: 4026)
+
+
+Started GET "/api/categories" for 127.0.0.1 at 2020-03-29 19:18:28 -0600
+Processing by Api::CategoriesController#index as HTML
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/categories_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.7ms | Allocations: 2943)
+
+
+Started GET "/api/cards" for 127.0.0.1 at 2020-03-29 19:18:29 -0600
+Processing by Api::CardsController#index as HTML
+  [1m[36mCard Load (0.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/cards_controller.rb:7:in `index'
+Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 0.8ms | Allocations: 3598)
+
+
+Started GET "/api/cards" for 127.0.0.1 at 2020-03-29 19:18:29 -0600
+Processing by Api::CardsController#index as HTML
+  [1m[36mCard Load (1.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/cards_controller.rb:7:in `index'
+Completed 200 OK in 14ms (Views: 9.8ms | ActiveRecord: 1.0ms | Allocations: 3597)
+
+
+Started GET "/api/cards" for 127.0.0.1 at 2020-03-29 19:18:29 -0600
+Processing by Api::CardsController#index as HTML
+  [1m[36mCard Load (0.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/cards_controller.rb:7:in `index'
+Completed 200 OK in 16ms (Views: 12.1ms | ActiveRecord: 0.9ms | Allocations: 3597)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:18:29 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.7ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 11ms (Views: 8.5ms | ActiveRecord: 0.7ms | Allocations: 4232)
+
+
+Started GET "/api/cards" for 127.0.0.1 at 2020-03-29 19:18:29 -0600
+Processing by Api::CardsController#index as HTML
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:18:29 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.7ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  [1m[36mCard Load (11.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+  ↳ app/controllers/api/cards_controller.rb:7:in `index'
+Completed 200 OK in 25ms (Views: 12.4ms | ActiveRecord: 11.2ms | Allocations: 9783)
+
+
+Completed 200 OK in 11ms (Views: 8.2ms | ActiveRecord: 0.7ms | Allocations: 5109)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:18:29 -0600
+Started GET "/api/cards" for 127.0.0.1 at 2020-03-29 19:18:29 -0600
+Processing by Api::CardsController#index as HTML
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/api/cards_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.6ms | Allocations: 3598)
+
+
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (10.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 20ms (Views: 8.3ms | ActiveRecord: 10.3ms | Allocations: 4286)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:18:29 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.9ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 10ms (Views: 7.6ms | ActiveRecord: 0.9ms | Allocations: 4026)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:18:29 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.6ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.6ms | Allocations: 4027)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:18:29 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.5ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.5ms | Allocations: 4026)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:18:29 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.7ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.7ms | Allocations: 4026)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:18:30 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.6ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.6ms | Allocations: 4027)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:18:30 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.6ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.6ms | Allocations: 4026)
+
+
+Started GET "/api/answers" for 127.0.0.1 at 2020-03-29 19:18:30 -0600
+Processing by Api::AnswersController#index as HTML
+  [1m[36mAnswer Load (0.7ms)[0m  [1m[34mSELECT "answers".* FROM "answers"[0m
+  ↳ app/controllers/api/answers_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.7ms | Allocations: 4027)
+
+

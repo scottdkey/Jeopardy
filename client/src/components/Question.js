@@ -48,7 +48,8 @@ class Question extends Component {
   }
   complete = () =>{
     const {question} = this.state
-    console.log(question)
+    let questionUpdate = {complete: question.complete = true}
+    console.log(questionUpdate)
     axios
     .put(`/api/cards/${question.id}.${question}`)
     .then(data => {
