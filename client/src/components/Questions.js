@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios'
-import { Card, Button } from 'semantic-ui-react'
+import { Card } from 'semantic-ui-react'
 import Question from "./Question"
 
 
@@ -53,12 +53,15 @@ export default class Questions extends React.Component {
 
 
   render(){
-    const {questions, showQuestion}= this.state
+    const {questions}= this.state
     return (
       <>
         {questions.map(question => (
           <Card key={question.id}>
-            <Question q={question} />
+            <Question
+              q={question}
+              {...this.props}
+            />
           </Card>
         ))}
       </>

@@ -21,7 +21,6 @@ export default class CardForm extends React.Component{
     answerC: '',
     answerD:'',
     correct:"",
-    toggleForm:false,
   }
 
   componentDidMount(){
@@ -47,25 +46,33 @@ export default class CardForm extends React.Component{
       this.setState({
         question:'',
         points:'',
-        answerA:'',
-        answerB:'',
-        answerC:'',
-        answerD:'',
-        value:null, 
+        complete:'',
       })
     })
     .catch(err => {
       console.log(err)
     })
+    axios.post('api/answers')
+    .then(res => {
+      console.log(res)
+      this.setState({
+        answerA:'',
+        answerB:'',
+        answerC:'',
+        answerD:'',
+        correct:'',
+      })
+    }).catch(err => {
+      console.log(err)
+    })
   }
 
-  pullData = () => {
+  pullData = (id) => {
     axios
-      .get("api/categories")
+      .get("api/categories", id)
       .then(res => {
         this.setState({
           categories: res.data,
-          load: true
         });
       })
       .catch(err => {
@@ -75,7 +82,7 @@ export default class CardForm extends React.Component{
 
   
   render(){
-    const {category, question, points, answerA, answerB, answerC, answerD, value, correct} = this.state
+    const {category, question, points, answerA, answerB, answerC, answerD, value, categories, correct} = this.state
     return(
       <>
       <Container>
@@ -83,7 +90,7 @@ export default class CardForm extends React.Component{
           <Form onSubmit={this.handleSubmit}>
           <Form.Group >
             <Form.Select
-              options={options} 
+              options={categories}
               width={6}
               label='Choose Category'
               name='category'

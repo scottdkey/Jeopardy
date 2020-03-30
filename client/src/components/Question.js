@@ -7,45 +7,78 @@ class Question extends Component {
     question: this.props.q,
     answers: [],
     correct: false,
-    incorrect: false,
+    complete: false,
     showQuestion: false
   };
 
-  componentDidMount(){
-    const qID = this.state.question.id
-    axios.get('/api/answers')
-    .then(res =>{
-      const answers = res.data.find(answers => {
-        if(answers.card_id === qID){
-          return answers
-        }
+  componentDidMount() {
+    const qID = this.state.question.id;
+    axios
+      .get("/api/answers")
+      .then(res => {
+        const answers = res.data.find(answers => {
+          if (answers.card_id === qID) {
+            return answers;
+          }
+        });
+        this.setState({
+          answers
+        });
       })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
+  toggleQuestion() {
+    this.setState({ showQuestion: !this.state.showQuestion });
+  }
+  checkAnswer = (answerTextValue) => {
+    const { points } = this.state.question;
+    const {add, subtract} = this.props
+    if (answerTextValue === this.state.answers.correct) {
+      add(points)
       this.setState({
-        answers
+        correct: true,
+        complete: true
       })
-    }).catch(err =>{console.log(err)})
+      this.toggleQuestion()
+    } else {
+      subtract(points)
+      this.setState({
+        complete: true
+      })
+      //tell the player they lost
+      console.log(this.state.incorrect);
+      this.toggleQuestion()
+    }
   }
-  
-  toggleQuestion(){
-    this.setState({ showQuestion: !this.state.showQuestion})
-  }
-  questionContainer(){
+
+  questionContainer() {
     const { question, answers } = this.state;
     return (
-    <>
+      <>
         <Card.Content>
           <Card.Header>{question.name}</Card.Header>
         </Card.Content>
         <Card.Description>
-            <Button color="orange">{answers.a}</Button>
-            <Button color="green">{answers.b}</Button>
-            <Button color="pink">{answers.c}</Button>
-            <Button color="blue">{answers.d}</Button>
-            {/* <Button>{answers.correct}</Button> */}
+          <Button onClick={() => this.checkAnswer(answers.a)} color="orange">
+            {answers.a}
+          </Button>
+          <Button onClick={() => this.checkAnswer(answers.b)} color="green">
+            {answers.b}
+          </Button>
+          <Button onClick={() => this.checkAnswer(answers.c)} color="pink">
+            {answers.c}
+          </Button>
+          <Button onClick={() => this.checkAnswer(answers.d)} color="blue">
+            {answers.d}
+          </Button>
+          {/* <Button>{answers.correct}</Button> */}
         </Card.Description>
-      </>)
+      </>
+    );
   }
-  
 
   render() {
     const { showQuestion, question } = this.state;

@@ -40,7 +40,9 @@ class Category extends Component {
         <Button color="red" onClick={() => this.props.delete(category.id)}>
           delete
         </Button>
-        <Questions category={this.props.category} />
+        <Questions
+          {...this.props}
+        />
       </>
     );
   }
