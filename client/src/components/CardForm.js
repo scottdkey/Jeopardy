@@ -43,10 +43,19 @@ export default class CardForm extends React.Component{
     e.preventDefault()
     axios.post('api/cards')
     .then(res => {
-
+      console.log(res)
+      this.setState({
+        question:'',
+        points:'',
+        answerA:'',
+        answerB:'',
+        answerC:'',
+        answerD:'',
+        value:null, 
+      })
     })
     .catch(err => {
-
+      console.log(err)
     })
   }
 
@@ -74,7 +83,7 @@ export default class CardForm extends React.Component{
           <Form onSubmit={this.handleSubmit}>
           <Form.Group >
             <Form.Select
-              // options={categorySelect} 
+              options={options} 
               width={6}
               label='Choose Category'
               name='category'
