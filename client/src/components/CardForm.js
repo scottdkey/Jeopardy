@@ -1,5 +1,7 @@
 import React from 'react';
-import {Form, Header, Button, Container} from 'semantic-ui-react';
+import {Form, Header, Button, Container, Radio} from 'semantic-ui-react';
+import axios from 'axios';
+import Categories from './categories';
 
 
 //need a form on this page that allows a user to create new cards
@@ -19,29 +21,68 @@ export default class CardForm extends React.Component{
     answerC: '',
     answerD:'',
     correct:"",
-    toggleForm:false,
   }
 
   componentDidMount(){
     console.log('mounted')
-    //honestly not sure what may or may not need to be here
+    axios.get('api/cards')
+    .then(res => {
+
+    })
+    .catch(err => {
+
+    })
   }
 
   handleChange = (e, {name, value}) => {this.setState({[name]:value})}
 
+  handleCorrectAnswer = (e, { value }) => this.setState({ value })
+
   handleSubmit = (e) => {
-    console.log('clicked')
-    //where should this submit to axios-wise? Not sure how we'll make adding new ones work
+    e.preventDefault()
+    axios.post('api/cards')
+    .then(res => {
+      console.log(res)
+      this.setState({
+        question:'',
+        points:'',
+        complete:'',
+      })
+    })
+    .catch(err => {
+      console.log(err)
+    })
+    axios.post('api/answers')
+    .then(res => {
+      console.log(res)
+      this.setState({
+        answerA:'',
+        answerB:'',
+        answerC:'',
+        answerD:'',
+        correct:'',
+      })
+    }).catch(err => {
+      console.log(err)
+    })
   }
 
-  toggleForm = () => {
-    //needs to be built out and needs a button somewhere
-  }
+  pullData = (id) => {
+    axios
+      .get("api/categories", id)
+      .then(res => {
+        this.setState({
+          categories: res.data,
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
 
-
-
+  
   render(){
-    const {category, question, points, answerA, answerB, answerC, answerD, correct} = this.state
+    const {category, question, points, answerA, answerB, answerC, answerD, value, categories, correct} = this.state
     return(
       <>
       <Container>
@@ -49,7 +90,7 @@ export default class CardForm extends React.Component{
           <Form onSubmit={this.handleSubmit}>
           <Form.Group >
             <Form.Select
-              // option value={Categories} something like this right here to render pre-made categories?
+              options={categories}
               width={6}
               label='Choose Category'
               name='category'
@@ -58,7 +99,8 @@ export default class CardForm extends React.Component{
               onChange={this.handleChange}
             />
             <Form.Select 
-            width={6}
+              width={6}
+              options={options}
               label='Point Value'
               name='points'
               placeholder='Select Point Value'
@@ -76,42 +118,74 @@ export default class CardForm extends React.Component{
           </Form.Group>
             <p>Please Enter 4 Answers</p>
             <p>Choose One Answer as the Correct Response</p>
-            <Form.Input
-              width={12} 
-              label='Answer A'
-              name='answerA'
-              placeholder='AnswerA'
-              value={answerA}
-              onChange={this.handleChange}
-            />
-            {/* needs some kind of radio button here  */}
-            <Form.Input 
-              width={12} 
-              label='AnswersB'
-              name='answerB'
-              placeholder='AnswerB'
-              value={answerB}
-              onChange={this.handleChange}
-            />
-            {/* needs some kind of radio button here  */}
-            <Form.Input
-              width={12} 
-              label='Answers C'
-              name='answerC'
-              placeholder='Answer'
-              value={answerC}
-              onChange={this.handleChange}
-            />
-            {/* needs some kind of radio button here  */}
-            <Form.Input 
-              width={12} 
-              label='Answers D'
-              name='answerD'
-              placeholder='Answer'
-              value={answerD}
-              onChange={this.handleChange}
-            />
-            {/* needs some kind of radio button here  */}
+            <Form.Group inline>
+              <Form.Input
+                width={12} 
+                label='Answer A'
+                name='answerA'
+                placeholder='Answer A'
+                value={answerA}
+                onChange={this.handleChange}
+              />
+                <Form.Field
+                  control={Radio}
+                  label='Correct'
+                  value='1'
+                  checked={value === '1'}
+                  onChange={this.handleCorrectAnswer}
+                />
+            </Form.Group>
+            <Form.Group inline>
+              <Form.Input 
+                width={12} 
+                label='Answer B'
+                name='answerB'
+                placeholder='Answer B'
+                value={answerB}
+                onChange={this.handleChange}
+              />
+              <Form.Field
+                  control={Radio}
+                  label='Correct'
+                  value='2'
+                  checked={value === '2'}
+                  onChange={this.handleCorrectAnswer}
+                />
+            </Form.Group>
+            <Form.Group inline>
+              <Form.Input
+                width={12} 
+                label='Answer C'
+                name='answerC'
+                placeholder='Answer C'
+                value={answerC}
+                onChange={this.handleChange}
+              />
+              <Form.Field
+                control={Radio}
+                label='Correct'
+                value='3'
+                checked={value === '3'}
+                onChange={this.handleCorrectAnswer}
+              />
+            </Form.Group>
+            <Form.Group inline>
+              <Form.Input 
+                width={12} 
+                label='Answer D'
+                name='answerD'
+                placeholder='Answer D'
+                value={answerD}
+                onChange={this.handleChange}
+              />
+              <Form.Field
+                control={Radio}
+                label='Correct'
+                value='4'
+                checked={value === '4'}
+                onChange={this.handleCorrectAnswer}
+              />
+            </Form.Group>
             <Button color='blue'>Submit</Button>
           </Form>
         </Container>
@@ -120,3 +194,16 @@ export default class CardForm extends React.Component{
   }
 
 }
+
+
+const options = [
+  { key: 'a', text: '100', value: 100 },
+  { key: 'b', text: '200', value: 200 },
+  { key: 'c', text: '300', value: 300 },
+  { key: 'd', text: '400', value: 400 },
+  { key: 'e', text: '500', value: 500 },
+]
+
+// const categorySelect = [
+//   this.pullData()
+// ]

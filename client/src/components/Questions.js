@@ -21,7 +21,12 @@ export default class Questions extends React.Component {
   return filtered
 }
 
+<<<<<<< HEAD
+
+
+=======
   //this should pull all our cards from the database, currently has some syntax error I can't figure out
+>>>>>>> b42fa1c1dd0243ff388b5135ad73549fb308b467
   componentDidMount() {
     const catID = this.props.category.id
     axios.get('/api/cards')
